@@ -186,6 +186,11 @@
                         "type": "boolean",
                         "default": false,
                         "markdownDescription": "Show button for command `git.showOutput`"
+                    },
+                    "scm-buttons.showGitRefresh": {
+                        "type": "boolean",
+                        "default": true,
+                        "markdownDescription": "Show button for command `git.refresh`"
                     }
                 }
             }
@@ -352,6 +357,12 @@
                 "command": "scm-buttons.git.showOutput",
                 "title": "Show Git Output",
                 "icon": "$(terminal)"
+            },
+            {
+                "category": "Source Control Buttons",
+                "command": "scm-buttons.git.refresh",
+                "title": "Refresh",
+                "icon": "$(refresh)"
             }
         ],
         "menus": {
@@ -490,6 +501,11 @@
                     "when": "config.scm-buttons.showGitShowOutput && scmProvider == git",
                     "command": "scm-buttons.git.showOutput",
                     "group": "navigation@27"
+                },
+                {
+                    "when": "config.scm-buttons.showGitRefresh && scmProvider == git",
+                    "command": "scm-buttons.git.refresh",
+                    "group": "navigation@28"
                 }
             ]
         }

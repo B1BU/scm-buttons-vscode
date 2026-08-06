@@ -163,3 +163,9 @@ GitPushForce:
   icon: arrow-up
   when: scmProvider == git
   default: false
+GitRefresh:
+  title: Refresh
+  command: git.refresh
+  icon: refresh
+  when: scmProvider == git
+  default: true
