@@ -167,10 +167,10 @@
                         "default": false,
                         "description": "Git Stash"
                     },
-                    "scm-buttons.showGitStashIncludeUntacked": {
+                    "scm-buttons.showGitStashIncludeUntracked": {
                         "type": "boolean",
                         "default": false,
-                        "description": "Git Stash (Include Untacked)"
+                        "description": "Git Stash (Include Untracked)"
                     },
                     "scm-buttons.showGitShowOutput": {
                         "type": "boolean",
@@ -321,7 +321,7 @@
             },
             {
                 "category": "Source Control Buttons",
-                "command": "scm-buttons.git.stashIncludeUntacked",
+                "command": "scm-buttons.git.stashIncludeUntracked",
                 "title": "Stash (Include Untracked)",
                 "icon": "$(repo-force-push)"
             },
@@ -450,8 +450,8 @@
                     "group": "navigation@23"
                 },
                 {
-                    "when": "scmProvider == git && config.scm-buttons.showGitStashIncludeUntacked",
-                    "command": "scm-buttons.git.stashIncludeUntacked",
+                    "when": "scmProvider == git && config.scm-buttons.showGitStashIncludeUntracked",
+                    "command": "scm-buttons.git.stashIncludeUntracked",
                     "group": "navigation@24"
                 },
                 {
