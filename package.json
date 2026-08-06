@@ -55,152 +55,152 @@
                     "scm-buttons.showGitCheckout": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.checkout`"
+                        "markdownDescription": "Show button for command `git.checkout`."
                     },
                     "scm-buttons.showGitSync": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.sync`"
+                        "markdownDescription": "Show button for command `git.sync`."
                     },
                     "scm-buttons.showGitSyncRebase": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.syncRebase`"
+                        "markdownDescription": "Show button for command `git.syncRebase`."
                     },
                     "scm-buttons.showGitPull": {
                         "type": "boolean",
                         "default": true,
-                        "markdownDescription": "Show button for command `git.pull`"
+                        "markdownDescription": "Show button for command `git.pull`."
                     },
                     "scm-buttons.showGitPush": {
                         "type": "boolean",
                         "default": true,
-                        "markdownDescription": "Show button for command `git.push`"
+                        "markdownDescription": "Show button for command `git.push`."
                     },
                     "scm-buttons.showGitPullRebase": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.pullRebase`"
+                        "markdownDescription": "Show button for command `git.pullRebase`."
                     },
                     "scm-buttons.showGitPushForce": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.pushForce`"
+                        "markdownDescription": "Show button for command `git.pushForce`."
                     },
                     "scm-buttons.showGitPullFrom": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.pullFrom`"
+                        "markdownDescription": "Show button for command `git.pullFrom`."
                     },
                     "scm-buttons.showGitPushTo": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.pushTo`"
+                        "markdownDescription": "Show button for command `git.pushTo`."
                     },
                     "scm-buttons.showGitCleanAll": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.cleanAll`"
+                        "markdownDescription": "Show button for command `git.cleanAll`."
                     },
                     "scm-buttons.showGitStageAll": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.stageAll`"
+                        "markdownDescription": "Show button for command `git.stageAll`."
                     },
                     "scm-buttons.showGitUnstageAll": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.unstageAll`"
+                        "markdownDescription": "Show button for command `git.unstageAll`."
                     },
                     "scm-buttons.showGitCommitStaged": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.commitStaged`"
+                        "markdownDescription": "Show button for command `git.commitStaged`."
                     },
                     "scm-buttons.showGitCommitStagedAmend": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.commitStagedAmend`"
+                        "markdownDescription": "Show button for command `git.commitStagedAmend`."
                     },
                     "scm-buttons.showGitCommitAll": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.commitAll`"
+                        "markdownDescription": "Show button for command `git.commitAll`."
                     },
                     "scm-buttons.showGitCommitAllAmend": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.commitAllAmend`"
+                        "markdownDescription": "Show button for command `git.commitAllAmend`."
                     },
                     "scm-buttons.showGitCommitStagedSigned": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.commitStagedSigned`"
+                        "markdownDescription": "Show button for command `git.commitStagedSigned`."
                     },
                     "scm-buttons.showGitCommitAllSigned": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.commitAllSigned`"
+                        "markdownDescription": "Show button for command `git.commitAllSigned`."
                     },
                     "scm-buttons.showGitUndoCommit": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.undoCommit`"
+                        "markdownDescription": "Show button for command `git.undoCommit`."
                     },
                     "scm-buttons.showGitStashApplyLatest": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.stashApplyLatest`"
+                        "markdownDescription": "Show button for command `git.stashApplyLatest`."
                     },
                     "scm-buttons.showGitStashApply": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.stashApply`"
+                        "markdownDescription": "Show button for command `git.stashApply`."
                     },
                     "scm-buttons.showGitStashPopLatest": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.stashPopLatest`"
+                        "markdownDescription": "Show button for command `git.stashPopLatest`."
                     },
                     "scm-buttons.showGitStashPop": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.stashPop`"
+                        "markdownDescription": "Show button for command `git.stashPop`."
                     },
                     "scm-buttons.showGitStash": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.stash`"
+                        "markdownDescription": "Show button for command `git.stash`."
                     },
                     "scm-buttons.showGitStashIncludeUntracked": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.stashIncludeUntracked`"
+                        "markdownDescription": "Show button for command `git.stashIncludeUntracked`."
                     },
                     "scm-buttons.showGitStashStaged": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.stashStaged`"
+                        "markdownDescription": "Show button for command `git.stashStaged`."
                     },
                     "scm-buttons.showGitStashDrop": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.stashDrop`"
+                        "markdownDescription": "Show button for command `git.stashDrop`."
                     },
                     "scm-buttons.showGitShowOutput": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.showOutput`"
+                        "markdownDescription": "Show button for command `git.showOutput`."
                     },
                     "scm-buttons.showGitPublish": {
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.publish`"
+                        "markdownDescription": "Show button for command `git.publish`."
                     },
                     "scm-buttons.showGitRefresh": {
                         "type": "boolean",
                         "default": true,
-                        "markdownDescription": "Show button for command `git.refresh`"
+                        "markdownDescription": "Show button for command `git.refresh`."
                     }
                 }
             }

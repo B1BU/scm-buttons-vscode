@@ -49,7 +49,7 @@ def parse_buttons(buttons_data: dict, include: Iterable | None = None) -> Iterab
 			configuration_data = {
 				'type': 'boolean',
 				'default': default,
-				'markdownDescription': f'Show button for command `{command}`',
+				'markdownDescription': f'Show button for command `{command}`.',
 			}
 
 			out_configuration = (config, configuration_data)
