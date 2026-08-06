@@ -1,4 +1,5 @@
 GitCheckout
+GitUndoCommit
 GitPull
 GitPullRebase
 GitPullFrom
@@ -12,7 +13,6 @@ GitCommitAllSigned
 GitCommitStaged
 GitCommitStagedAmend
 GitCommitStagedSigned
-GitUndoCommit
 GitCleanAll
 GitStageAll
 GitUnstageAll

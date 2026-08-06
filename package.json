@@ -57,6 +57,11 @@
                         "default": false,
                         "markdownDescription": "Show button for command `git.checkout`"
                     },
+                    "scm-buttons.showGitUndoCommit": {
+                        "type": "boolean",
+                        "default": false,
+                        "markdownDescription": "Show button for command `git.undoCommit`"
+                    },
                     "scm-buttons.showGitPull": {
                         "type": "boolean",
                         "default": true,
@@ -121,11 +126,6 @@
                         "type": "boolean",
                         "default": false,
                         "markdownDescription": "Show button for command `git.commitStagedSigned`"
-                    },
-                    "scm-buttons.showGitUndoCommit": {
-                        "type": "boolean",
-                        "default": false,
-                        "markdownDescription": "Show button for command `git.undoCommit`"
                     },
                     "scm-buttons.showGitCleanAll": {
                         "type": "boolean",
@@ -204,6 +204,12 @@
             },
             {
                 "category": "Source Control Buttons",
+                "command": "scm-buttons.git.undoCommit",
+                "title": "Undo Commit",
+                "icon": "$(history)"
+            },
+            {
+                "category": "Source Control Buttons",
                 "command": "scm-buttons.git.pull",
                 "title": "Pull",
                 "icon": "$(arrow-down)"
@@ -279,12 +285,6 @@
                 "command": "scm-buttons.git.commitStagedSigned",
                 "title": "Commit Staged (Signed Off)",
                 "icon": "$(issue-closed)"
-            },
-            {
-                "category": "Source Control Buttons",
-                "command": "scm-buttons.git.undoCommit",
-                "title": "Undo Commit",
-                "icon": "$(history)"
             },
             {
                 "category": "Source Control Buttons",
@@ -373,73 +373,73 @@
                     "group": "navigation@1"
                 },
                 {
+                    "when": "config.scm-buttons.showGitUndoCommit && scmProvider == git",
+                    "command": "scm-buttons.git.undoCommit",
+                    "group": "navigation@2"
+                },
+                {
                     "when": "config.scm-buttons.showGitPull && scmProvider == git",
                     "command": "scm-buttons.git.pull",
-                    "group": "navigation@2"
+                    "group": "navigation@3"
                 },
                 {
                     "when": "config.scm-buttons.showGitPullRebase && scmProvider == git",
                     "command": "scm-buttons.git.pullRebase",
-                    "group": "navigation@3"
+                    "group": "navigation@4"
                 },
                 {
                     "when": "config.scm-buttons.showGitPullFrom && scmProvider == git",
                     "command": "scm-buttons.git.pullFrom",
-                    "group": "navigation@4"
+                    "group": "navigation@5"
                 },
                 {
                     "when": "config.scm-buttons.showGitPush && scmProvider == git",
                     "command": "scm-buttons.git.push",
-                    "group": "navigation@5"
+                    "group": "navigation@6"
                 },
                 {
                     "when": "config.scm-buttons.showGitPushForce && scmProvider == git",
                     "command": "scm-buttons.git.pushForce",
-                    "group": "navigation@6"
+                    "group": "navigation@7"
                 },
                 {
                     "when": "config.scm-buttons.showGitPushTo && scmProvider == git",
                     "command": "scm-buttons.git.pushTo",
-                    "group": "navigation@7"
+                    "group": "navigation@8"
                 },
                 {
                     "when": "config.scm-buttons.showGitPublish && scmProvider == git",
                     "command": "scm-buttons.git.publish",
-                    "group": "navigation@8"
+                    "group": "navigation@9"
                 },
                 {
                     "when": "config.scm-buttons.showGitCommitAll && scmProvider == git",
                     "command": "scm-buttons.git.commitAll",
-                    "group": "navigation@9"
+                    "group": "navigation@10"
                 },
                 {
                     "when": "config.scm-buttons.showGitCommitAllAmend && scmProvider == git",
                     "command": "scm-buttons.git.commitAllAmend",
-                    "group": "navigation@10"
+                    "group": "navigation@11"
                 },
                 {
                     "when": "config.scm-buttons.showGitCommitAllSigned && scmProvider == git",
                     "command": "scm-buttons.git.commitAllSigned",
-                    "group": "navigation@11"
+                    "group": "navigation@12"
                 },
                 {
                     "when": "config.scm-buttons.showGitCommitStaged && scmProvider == git",
                     "command": "scm-buttons.git.commitStaged",
-                    "group": "navigation@12"
+                    "group": "navigation@13"
                 },
                 {
                     "when": "config.scm-buttons.showGitCommitStagedAmend && scmProvider == git",
                     "command": "scm-buttons.git.commitStagedAmend",
-                    "group": "navigation@13"
+                    "group": "navigation@14"
                 },
                 {
                     "when": "config.scm-buttons.showGitCommitStagedSigned && scmProvider == git",
                     "command": "scm-buttons.git.commitStagedSigned",
-                    "group": "navigation@14"
-                },
-                {
-                    "when": "config.scm-buttons.showGitUndoCommit && scmProvider == git",
-                    "command": "scm-buttons.git.undoCommit",
                     "group": "navigation@15"
                 },
                 {
