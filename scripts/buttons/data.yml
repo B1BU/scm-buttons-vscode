@@ -171,3 +171,15 @@ GitRefresh:
   icon: refresh
   when: scmProvider == git
   default: true
+GitSync:
+  title: Sync
+  command: git.sync
+  icon: sync
+  when: scmProvider == git
+  default: false
+GitSyncRebase:
+  title: Sync (Rebase)
+  command: git.syncRebase
+  icon: sync
+  when: scmProvider == git
+  default: false

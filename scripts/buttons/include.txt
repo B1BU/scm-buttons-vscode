@@ -1,4 +1,6 @@
 GitCheckout
+GitSync
+GitSyncRebase
 GitPull
 GitPush
 GitPullRebase
