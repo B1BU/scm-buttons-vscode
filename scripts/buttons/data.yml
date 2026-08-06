@@ -34,7 +34,7 @@ GitPushTo:
 GitCheckout:
   title: Checkout to...
   command: git.checkout
-  icon: git-branch
+  icon: git-commit
   when: scmProvider == git
   default: false
 GitPublish:
@@ -58,7 +58,7 @@ GitCommitAllAmend:
 GitCommitAllSigned:
   title: Commit All (Signed Off)
   command: git.commitAllSigned
-  icon: pass
+  icon: check-all
   when: scmProvider == git
   default: false
 GitCommitStaged:
@@ -76,13 +76,13 @@ GitCommitStagedAmend:
 GitCommitStagedSigned:
   title: Commit Staged (Signed Off)
   command: git.commitStagedSigned
-  icon: pass
+  icon: check
   when: scmProvider == git
   default: false
 GitUndoCommit:
   title: Undo Commit
   command: git.undoCommit
-  icon: history
+  icon: reply
   when: scmProvider == git
   default: false
 GitCleanAll:
@@ -148,7 +148,7 @@ GitStashIncludeUntracked:
 GitShowOutput:
   title: Show Git Output
   command: git.showOutput
-  icon: terminal
+  icon: output
   when: scmProvider == git
   default: false
 

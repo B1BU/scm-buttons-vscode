@@ -1,3 +1,7 @@
+## Version 0.1.4
+- Updated button icons
+- Updated button positions
+
 ## Version 0.1.3
 - Updated store icon
 

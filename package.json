@@ -97,6 +97,11 @@
                         "default": false,
                         "markdownDescription": "Show button for command `git.pushTo`."
                     },
+                    "scm-buttons.showGitPublish": {
+                        "type": "boolean",
+                        "default": false,
+                        "markdownDescription": "Show button for command `git.publish`."
+                    },
                     "scm-buttons.showGitCleanAll": {
                         "type": "boolean",
                         "default": false,
@@ -117,15 +122,15 @@
                         "default": false,
                         "markdownDescription": "Show button for command `git.commitStaged`."
                     },
-                    "scm-buttons.showGitCommitStagedAmend": {
-                        "type": "boolean",
-                        "default": false,
-                        "markdownDescription": "Show button for command `git.commitStagedAmend`."
-                    },
                     "scm-buttons.showGitCommitAll": {
                         "type": "boolean",
                         "default": false,
                         "markdownDescription": "Show button for command `git.commitAll`."
+                    },
+                    "scm-buttons.showGitCommitStagedAmend": {
+                        "type": "boolean",
+                        "default": false,
+                        "markdownDescription": "Show button for command `git.commitStagedAmend`."
                     },
                     "scm-buttons.showGitCommitAllAmend": {
                         "type": "boolean",
@@ -192,11 +197,6 @@
                         "default": false,
                         "markdownDescription": "Show button for command `git.showOutput`."
                     },
-                    "scm-buttons.showGitPublish": {
-                        "type": "boolean",
-                        "default": false,
-                        "markdownDescription": "Show button for command `git.publish`."
-                    },
                     "scm-buttons.showGitRefresh": {
                         "type": "boolean",
                         "default": true,
@@ -220,7 +220,7 @@
                 "category": "Source Control Buttons",
                 "command": "scm-buttons.git.checkout",
                 "title": "Checkout to...",
-                "icon": "$(git-branch)"
+                "icon": "$(git-commit)"
             },
             {
                 "category": "Source Control Buttons",
@@ -272,6 +272,12 @@
             },
             {
                 "category": "Source Control Buttons",
+                "command": "scm-buttons.git.publish",
+                "title": "Publish branch...",
+                "icon": "$(rocket)"
+            },
+            {
+                "category": "Source Control Buttons",
                 "command": "scm-buttons.git.cleanAll",
                 "title": "Discard All Changes",
                 "icon": "$(discard)"
@@ -296,15 +302,15 @@
             },
             {
                 "category": "Source Control Buttons",
-                "command": "scm-buttons.git.commitStagedAmend",
-                "title": "Commit Staged (Amend)",
-                "icon": "$(check)"
-            },
-            {
-                "category": "Source Control Buttons",
                 "command": "scm-buttons.git.commitAll",
                 "title": "Commit All",
                 "icon": "$(check-all)"
+            },
+            {
+                "category": "Source Control Buttons",
+                "command": "scm-buttons.git.commitStagedAmend",
+                "title": "Commit Staged (Amend)",
+                "icon": "$(check)"
             },
             {
                 "category": "Source Control Buttons",
@@ -316,19 +322,19 @@
                 "category": "Source Control Buttons",
                 "command": "scm-buttons.git.commitStagedSigned",
                 "title": "Commit Staged (Signed Off)",
-                "icon": "$(pass)"
+                "icon": "$(check)"
             },
             {
                 "category": "Source Control Buttons",
                 "command": "scm-buttons.git.commitAllSigned",
                 "title": "Commit All (Signed Off)",
-                "icon": "$(pass)"
+                "icon": "$(check-all)"
             },
             {
                 "category": "Source Control Buttons",
                 "command": "scm-buttons.git.undoCommit",
                 "title": "Undo Commit",
-                "icon": "$(history)"
+                "icon": "$(reply)"
             },
             {
                 "category": "Source Control Buttons",
@@ -382,13 +388,7 @@
                 "category": "Source Control Buttons",
                 "command": "scm-buttons.git.showOutput",
                 "title": "Show Git Output",
-                "icon": "$(terminal)"
-            },
-            {
-                "category": "Source Control Buttons",
-                "command": "scm-buttons.git.publish",
-                "title": "Publish branch...",
-                "icon": "$(rocket)"
+                "icon": "$(output)"
             },
             {
                 "category": "Source Control Buttons",
@@ -445,28 +445,28 @@
                     "group": "navigation@9"
                 },
                 {
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitPublish && scmProvider == git",
+                    "command": "scm-buttons.git.publish",
+                    "group": "navigation@10"
+                },
+                {
                     "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitCleanAll && scmProvider == git",
                     "command": "scm-buttons.git.cleanAll",
-                    "group": "navigation@10"
+                    "group": "navigation@11"
                 },
                 {
                     "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitStageAll && scmProvider == git",
                     "command": "scm-buttons.git.stageAll",
-                    "group": "navigation@11"
+                    "group": "navigation@12"
                 },
                 {
                     "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitUnstageAll && scmProvider == git",
                     "command": "scm-buttons.git.unstageAll",
-                    "group": "navigation@12"
+                    "group": "navigation@13"
                 },
                 {
                     "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitCommitStaged && scmProvider == git",
                     "command": "scm-buttons.git.commitStaged",
-                    "group": "navigation@13"
-                },
-                {
-                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitCommitStagedAmend && scmProvider == git",
-                    "command": "scm-buttons.git.commitStagedAmend",
                     "group": "navigation@14"
                 },
                 {
@@ -475,73 +475,73 @@
                     "group": "navigation@15"
                 },
                 {
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitCommitStagedAmend && scmProvider == git",
+                    "command": "scm-buttons.git.commitStagedAmend",
+                    "group": "navigation@16"
+                },
+                {
                     "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitCommitAllAmend && scmProvider == git",
                     "command": "scm-buttons.git.commitAllAmend",
-                    "group": "navigation@16"
+                    "group": "navigation@17"
                 },
                 {
                     "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitCommitStagedSigned && scmProvider == git",
                     "command": "scm-buttons.git.commitStagedSigned",
-                    "group": "navigation@17"
+                    "group": "navigation@18"
                 },
                 {
                     "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitCommitAllSigned && scmProvider == git",
                     "command": "scm-buttons.git.commitAllSigned",
-                    "group": "navigation@18"
+                    "group": "navigation@19"
                 },
                 {
                     "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitUndoCommit && scmProvider == git",
                     "command": "scm-buttons.git.undoCommit",
-                    "group": "navigation@19"
+                    "group": "navigation@20"
                 },
                 {
                     "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitStashApplyLatest && scmProvider == git",
                     "command": "scm-buttons.git.stashApplyLatest",
-                    "group": "navigation@20"
+                    "group": "navigation@21"
                 },
                 {
                     "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitStashApply && scmProvider == git",
                     "command": "scm-buttons.git.stashApply",
-                    "group": "navigation@21"
+                    "group": "navigation@22"
                 },
                 {
                     "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitStashPopLatest && scmProvider == git",
                     "command": "scm-buttons.git.stashPopLatest",
-                    "group": "navigation@22"
+                    "group": "navigation@23"
                 },
                 {
                     "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitStashPop && scmProvider == git",
                     "command": "scm-buttons.git.stashPop",
-                    "group": "navigation@23"
+                    "group": "navigation@24"
                 },
                 {
                     "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitStash && scmProvider == git",
                     "command": "scm-buttons.git.stash",
-                    "group": "navigation@24"
+                    "group": "navigation@25"
                 },
                 {
                     "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitStashIncludeUntracked && scmProvider == git",
                     "command": "scm-buttons.git.stashIncludeUntracked",
-                    "group": "navigation@25"
+                    "group": "navigation@26"
                 },
                 {
                     "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitStashStaged && scmProvider == git",
                     "command": "scm-buttons.git.stashStaged",
-                    "group": "navigation@26"
+                    "group": "navigation@27"
                 },
                 {
                     "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitStashDrop && scmProvider == git",
                     "command": "scm-buttons.git.stashDrop",
-                    "group": "navigation@27"
+                    "group": "navigation@28"
                 },
                 {
                     "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitShowOutput && scmProvider == git",
                     "command": "scm-buttons.git.showOutput",
-                    "group": "navigation@28"
-                },
-                {
-                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitPublish && scmProvider == git",
-                    "command": "scm-buttons.git.publish",
                     "group": "navigation@29"
                 },
                 {
