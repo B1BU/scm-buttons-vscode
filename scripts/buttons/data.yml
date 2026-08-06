@@ -1,185 +1,191 @@
 # Icon reference: https://microsoft.github.io/vscode-codicons/dist/codicon.html
 
-# Original
-GitPull:
-  title: Pull
-  command: git.pull
-  icon: repo-pull
-  when: scmProvider == git
-  default: true
-GitPullRebase:
-  title: Pull (Rebase)
-  command: git.pullRebase
-  icon: repo-fetch
-  when: scmProvider == git
-  default: false
-GitPullFrom:
-  title: Pull from...
-  command: git.pullFrom
-  icon: cloud-download
-  when: scmProvider == git
-  default: false
-GitPush:
-  title: Push
-  command: git.push
-  icon: repo-push
-  when: scmProvider == git
-  default: true
-GitPushTo:
-  title: Push to...
-  command: git.pushTo
-  icon: cloud-upload
-  when: scmProvider == git
-  default: false
-GitCheckout:
-  title: Checkout to...
-  command: git.checkout
-  icon: git-commit
-  when: scmProvider == git
-  default: false
-GitPublish:
-  title: Publish branch...
-  command: git.publish
-  icon: rocket
-  when: scmProvider == git
-  default: false
-GitCommitAll:
-  title: Commit All
-  command: git.commitAll
-  icon: check-all
-  when: scmProvider == git
-  default: false
-GitCommitAllAmend:
-  title: Commit All (Amend)
-  command: git.commitAllAmend
-  icon: check-all
-  when: scmProvider == git
-  default: false
-GitCommitAllSigned:
-  title: Commit All (Signed Off)
-  command: git.commitAllSigned
-  icon: check-all
-  when: scmProvider == git
-  default: false
-GitCommitStaged:
-  title: Commit Staged
-  command: git.commitStaged
-  icon: check
-  when: scmProvider == git
-  default: false
-GitCommitStagedAmend:
-  title: Commit Staged (Amend)
-  command: git.commitStagedAmend
-  icon: check
-  when: scmProvider == git
-  default: false
-GitCommitStagedSigned:
-  title: Commit Staged (Signed Off)
-  command: git.commitStagedSigned
-  icon: check
-  when: scmProvider == git
-  default: false
-GitUndoCommit:
-  title: Undo Commit
-  command: git.undoCommit
-  icon: reply
-  when: scmProvider == git
-  default: false
-GitCleanAll:
-  title: Discard All Changes
-  command: git.cleanAll
-  icon: discard
-  when: scmProvider == git
-  default: false
-GitStageAll:
-  title: Stage All Changes
-  command: git.stageAll
-  icon: add
-  when: scmProvider == git
-  default: false
-GitUnstageAll:
-  title: Unstage All Changes
-  command: git.unstageAll
-  icon: remove
-  when: scmProvider == git
-  default: false
-GitStashApplyLatest:
-  title: Apply Latest Stash
-  command: git.stashApplyLatest
-  icon: git-stash-apply
-  when: scmProvider == git
-  default: false
-GitStashApply:
-  title: Apply Stash...
-  command: git.stashApply
-  icon: git-stash-apply
-  when: scmProvider == git
-  default: false
-GitStashDrop:
-  title: Drop Stash...
-  command: git.stashDrop
-  icon: trash
-  when: scmProvider == git
-  default: false
-GitStashPopLatest:
-  title: Pop Latest Stash
-  command: git.stashPopLatest
-  icon: git-stash-pop
-  when: scmProvider == git
-  default: false
-GitStashPop:
-  title: Pop Stash...
-  command: git.stashPop
-  icon: git-stash-pop
-  when: scmProvider == git
-  default: false
-GitStash:
-  title: Stash
-  command: git.stash
-  icon: git-stash
-  when: scmProvider == git
-  default: false
-GitStashIncludeUntracked:
-  title: Stash (Include Untracked)
-  command: git.stashIncludeUntracked
-  icon: git-stash
-  when: scmProvider == git
-  default: false
-GitShowOutput:
-  title: Show Git Output
-  command: git.showOutput
-  icon: output
-  when: scmProvider == git
-  default: false
-
-# Custom
-GitStashStaged:
-  title: Stash Staged
-  command: git.stashStaged
-  icon: git-stash
-  when: scmProvider == git
-  default: false
-GitPushForce:
-  title: Push (Force)
-  command: git.pushForce
-  icon: repo-force-push
-  when: scmProvider == git
-  default: false
+# General
 GitRefresh:
-  title: Refresh
   command: git.refresh
-  icon: refresh
-  when: scmProvider == git
   default: true
+  icon: refresh
+  title: Refresh
+  when: scmProvider == git
+GitShowOutput:
+  command: git.showOutput
+  default: false
+  icon: output
+  title: Show Git Output
+  when: scmProvider == git
+GitCheckout:
+  command: git.checkout
+  default: false
+  icon: git-commit
+  title: Checkout to...
+  when: scmProvider == git
+
+# Changes
+GitStageAll:
+  command: git.stageAll
+  default: false
+  icon: add
+  title: Stage All Changes
+  when: scmProvider == git
+GitUnstageAll:
+  command: git.unstageAll
+  default: false
+  icon: remove
+  title: Unstage All Changes
+  when: scmProvider == git
+GitCleanAll:
+  command: git.cleanAll
+  default: false
+  icon: discard
+  title: Discard All Changes
+  when: scmProvider == git
+
+# Committing
+GitCommitStaged:
+  command: git.commitStaged
+  default: false
+  icon: check
+  title: Commit Staged
+  when: scmProvider == git
+GitCommitAll:
+  command: git.commitAll
+  default: false
+  icon: check-all
+  title: Commit All
+  when: scmProvider == git
+GitCommitAllAmend:
+  command: git.commitAllAmend
+  default: false
+  icon: check-all
+  title: Commit All (Amend)
+  when: scmProvider == git
+GitCommitAllSigned:
+  command: git.commitAllSigned
+  default: false
+  icon: check-all
+  title: Commit All (Signed Off)
+  when: scmProvider == git
+GitCommitStagedAmend:
+  command: git.commitStagedAmend
+  default: false
+  icon: check
+  title: Commit Staged (Amend)
+  when: scmProvider == git
+GitCommitStagedSigned:
+  command: git.commitStagedSigned
+  default: false
+  icon: check
+  title: Commit Staged (Signed Off)
+  when: scmProvider == git
+GitUndoCommit:
+  command: git.undoCommit
+  default: false
+  icon: reply
+  title: Undo Commit
+  when: scmProvider == git
+
+# Remotes
+GitPublish:
+  command: git.publish
+  default: false
+  icon: rocket
+  title: Publish branch...
+  when: scmProvider == git
 GitSync:
-  title: Sync
   command: git.sync
-  icon: sync
-  when: scmProvider == git
   default: false
+  icon: sync
+  title: Sync
+  when: scmProvider == git
 GitSyncRebase:
-  title: Sync (Rebase)
   command: git.syncRebase
-  icon: sync
-  when: scmProvider == git
   default: false
+  icon: sync
+  title: Sync (Rebase)
+  when: scmProvider == git
+GitPull:
+  command: git.pull
+  default: true
+  icon: repo-pull
+  title: Pull
+  when: scmProvider == git
+GitPullRebase:
+  command: git.pullRebase
+  default: false
+  icon: repo-fetch
+  title: Pull (Rebase)
+  when: scmProvider == git
+GitPullFrom:
+  command: git.pullFrom
+  default: false
+  icon: cloud-download
+  title: Pull from...
+  when: scmProvider == git
+GitPush:
+  command: git.push
+  default: true
+  icon: repo-push
+  title: Push
+  when: scmProvider == git
+GitPushForce:
+  command: git.pushForce
+  default: false
+  icon: repo-force-push
+  title: Push (Force)
+  when: scmProvider == git
+GitPushTo:
+  command: git.pushTo
+  default: false
+  icon: cloud-upload
+  title: Push to...
+  when: scmProvider == git
+
+# Stashing
+GitStash:
+  command: git.stash
+  default: false
+  icon: git-stash
+  title: Stash
+  when: scmProvider == git
+GitStashIncludeUntracked:
+  command: git.stashIncludeUntracked
+  default: false
+  icon: git-stash
+  title: Stash (Include Untracked)
+  when: scmProvider == git
+GitStashStaged:
+  command: git.stashStaged
+  default: false
+  icon: git-stash
+  title: Stash Staged
+  when: scmProvider == git
+GitStashApply:
+  command: git.stashApply
+  default: false
+  icon: git-stash-apply
+  title: Apply Stash...
+  when: scmProvider == git
+GitStashApplyLatest:
+  command: git.stashApplyLatest
+  default: false
+  icon: git-stash-apply
+  title: Apply Latest Stash
+  when: scmProvider == git
+GitStashDrop:
+  command: git.stashDrop
+  default: false
+  icon: trash
+  title: Drop Stash...
+  when: scmProvider == git
+GitStashPop:
+  command: git.stashPop
+  default: false
+  icon: git-stash-pop
+  title: Pop Stash...
+  when: scmProvider == git
+GitStashPopLatest:
+  command: git.stashPopLatest
+  default: false
+  icon: git-stash-pop
+  title: Pop Latest Stash
+  when: scmProvider == git
