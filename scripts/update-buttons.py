@@ -35,17 +35,13 @@ def print_traceback() -> None:
 	sys.excepthook(*sys.exc_info())
 
 
-def parse_buttons(buttons: dict, include: Iterable | Literal['*'] = '*') -> Iterable[tuple[tuple[str, dict], dict, dict]]:
+def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'] = '*') -> Iterable[tuple[tuple[str, dict], dict, dict]]:
 	'''Returns: `((configuration_data_key, configuration_data_value), commands_data, menus_data)`'''
 
-	if include == '*':
-		include = buttons.keys()
-
+	index = 1
 	n_missing = 0
 	n_errors = 0
-
-	index = 1
-	for id in include:
+	for id in buttons if include == '*' else include:
 		try:
 			if id not in buttons:
 				print(f'-- \x1b[90m{id}\x1b[0m')
@@ -54,11 +50,14 @@ def parse_buttons(buttons: dict, include: Iterable | Literal['*'] = '*') -> Iter
 
 			data = buttons[id]
 
-			title = data['title']
-			command = data['command']
-			icon = data['icon']
-			when = data['when']
+			title = '' if data['title'] is None else str(data['title'])
+			command = '' if data['command'] is None else str(data['command'])
+			icon = '' if data['icon'] is None else str(data['icon'])
+			when = '' if data['when'] is None else str(data['when'])
+
 			default = data['default']
+			if not isinstance(default, bool):
+				raise TypeError('default must be a bool')
 
 			config_name = f'scm-buttons.show{id}'
 			ext_command = f'scm-buttons.{command}'
@@ -79,8 +78,13 @@ def parse_buttons(buttons: dict, include: Iterable | Literal['*'] = '*') -> Iter
 				'icon': f'$({icon})',
 			}
 
+			out_when = ' && '.join([
+				f'(config.scm-buttons.showAll || {config_condition})',
+				*(when and [when])
+			])
+
 			out_menus_data = {
-				'when': f'config.scm-buttons.showAll && {when} || {config_condition} && {when}' if when else config_condition,
+				'when': out_when,
 				'command': ext_command,
 				'group': f'navigation@{index}',
 			}
