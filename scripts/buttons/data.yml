@@ -4,13 +4,13 @@
 GitPull:
   title: Pull
   command: git.pull
-  icon: arrow-down
+  icon: repo-pull
   when: scmProvider == git
   default: true
 GitPullRebase:
   title: Pull (Rebase)
   command: git.pullRebase
-  icon: arrow-small-down
+  icon: repo-fetch
   when: scmProvider == git
   default: false
 GitPullFrom:
@@ -22,7 +22,7 @@ GitPullFrom:
 GitPush:
   title: Push
   command: git.push
-  icon: arrow-up
+  icon: repo-push
   when: scmProvider == git
   default: true
 GitPushTo:
@@ -34,31 +34,31 @@ GitPushTo:
 GitCheckout:
   title: Checkout to...
   command: git.checkout
-  icon: git-commit
+  icon: git-branch
   when: scmProvider == git
   default: false
 GitPublish:
   title: Publish branch...
   command: git.publish
-  icon: live-share
+  icon: rocket
   when: scmProvider == git
   default: false
 GitCommitAll:
   title: Commit All
   command: git.commitAll
-  icon: checklist
+  icon: check-all
   when: scmProvider == git
   default: false
 GitCommitAllAmend:
   title: Commit All (Amend)
   command: git.commitAllAmend
-  icon: tasklist
+  icon: check-all
   when: scmProvider == git
   default: false
 GitCommitAllSigned:
   title: Commit All (Signed Off)
   command: git.commitAllSigned
-  icon: issue-closed
+  icon: pass
   when: scmProvider == git
   default: false
 GitCommitStaged:
@@ -70,13 +70,13 @@ GitCommitStaged:
 GitCommitStagedAmend:
   title: Commit Staged (Amend)
   command: git.commitStagedAmend
-  icon: tasklist
+  icon: check
   when: scmProvider == git
   default: false
 GitCommitStagedSigned:
   title: Commit Staged (Signed Off)
   command: git.commitStagedSigned
-  icon: issue-closed
+  icon: pass
   when: scmProvider == git
   default: false
 GitUndoCommit:
@@ -88,31 +88,31 @@ GitUndoCommit:
 GitCleanAll:
   title: Discard All Changes
   command: git.cleanAll
-  icon: clear-all
+  icon: discard
   when: scmProvider == git
   default: false
 GitStageAll:
   title: Stage All Changes
   command: git.stageAll
-  icon: diff-added
+  icon: add
   when: scmProvider == git
   default: false
 GitUnstageAll:
   title: Unstage All Changes
   command: git.unstageAll
-  icon: diff-removed
+  icon: remove
   when: scmProvider == git
   default: false
 GitStashApplyLatest:
   title: Apply Latest Stash
   command: git.stashApplyLatest
-  icon: repo-clone
+  icon: git-stash-apply
   when: scmProvider == git
   default: false
 GitStashApply:
   title: Apply Stash...
   command: git.stashApply
-  icon: repo-clone
+  icon: git-stash-apply
   when: scmProvider == git
   default: false
 GitStashDrop:
@@ -124,25 +124,25 @@ GitStashDrop:
 GitStashPopLatest:
   title: Pop Latest Stash
   command: git.stashPopLatest
-  icon: repo-pull
+  icon: git-stash-pop
   when: scmProvider == git
   default: false
 GitStashPop:
   title: Pop Stash...
   command: git.stashPop
-  icon: repo-pull
+  icon: git-stash-pop
   when: scmProvider == git
   default: false
 GitStash:
   title: Stash
   command: git.stash
-  icon: repo-push
+  icon: git-stash
   when: scmProvider == git
   default: false
 GitStashIncludeUntracked:
   title: Stash (Include Untracked)
   command: git.stashIncludeUntracked
-  icon: repo-force-push
+  icon: git-stash
   when: scmProvider == git
   default: false
 GitShowOutput:
@@ -156,13 +156,13 @@ GitShowOutput:
 GitStashStaged:
   title: Stash Staged
   command: git.stashStaged
-  icon: repo-push
+  icon: git-stash
   when: scmProvider == git
   default: false
 GitPushForce:
   title: Push (Force)
   command: git.pushForce
-  icon: arrow-up
+  icon: repo-force-push
   when: scmProvider == git
   default: false
 GitRefresh:
