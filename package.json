@@ -1,14 +1,14 @@
 {
     "name": "scm-buttons-vscode",
-    "publisher": "tomblind",
-    "version": "0.1.1",
+    "publisher": "b1bu",
+    "version": "0.1.2",
     "description": "Additional Source Control Buttons for Visual Studio Code",
-    "displayName": "Source Control Buttons",
+    "displayName": "Source Control Buttons (Fork)",
     "icon": "resources/icon.png",
     "main": "extension/extension.js",
     "repository": {
         "type": "github",
-        "url": "https://github.com/tomblind/scm-buttons-vscode.git"
+        "url": "https://github.com/b1bu/scm-buttons-vscode.git"
     },
     "scripts": {
         "build": "tsc -p .",
@@ -16,7 +16,7 @@
         "publish": "npm run bundle && vsce publish",
         "clean": "rm -f extension/*.js && rm -f extension/*.js.map && rm -f *.vsix"
     },
-    "author": "tomblind@users.noreply.github.com",
+    "author": "b1bu@users.noreply.github.com",
     "license": "MIT",
     "categories": [
         "Other"
