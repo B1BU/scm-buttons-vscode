@@ -1,0 +1,1 @@
+python "$PSScriptRoot/update-buttons.py"

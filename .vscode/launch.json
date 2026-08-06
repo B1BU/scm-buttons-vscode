@@ -12,7 +12,7 @@
 			"outFiles": [
 				"${workspaceFolder}/**/*.js"
 			],
-			"preLaunchTask": "Update Package"
+			"preLaunchTask": "Prepare Extension"
 		}
 	]
 }

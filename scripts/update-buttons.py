@@ -6,11 +6,12 @@ from pathlib import Path
 
 import yaml
 
-ROOT_PATH = Path('..')
-PACKAGE_FILE = ROOT_PATH / 'package.json'
+ROOT_DIR = Path('..')
+PACKAGE_FILE = ROOT_DIR / 'package.json'
 
-BUTTON_DATA_FILE = Path('buttons/data.yml')
-BUTTON_INCLUDE_FILE = Path('buttons/include.txt')
+DATA_DIR = Path('data')
+BUTTON_DATA_FILE = DATA_DIR / 'buttons.yml'
+BUTTON_INCLUDE_FILE = DATA_DIR / 'include.txt'
 
 ERROR_PREFIX = '\x1b[91m[ERROR]\x1b[0m'
 

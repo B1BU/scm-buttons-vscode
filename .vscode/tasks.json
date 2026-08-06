@@ -29,15 +29,12 @@
 			]
 		},
 		{
-			"label": "Update Package",
-				"type": "process",
-			"command": "python",
+			"label": "Prepare Extension",
+			"type": "shell",
+			"command": "${workspaceFolder}/scripts/pre-launch.ps1",
 			"options": {
 				"cwd": "${workspaceFolder}/scripts"
 			},
-			"args": [
-				"${workspaceFolder}/scripts/update-package.py"
-			],
 			"problemMatcher": []
 		}
 	]
