@@ -27,6 +27,18 @@
 			"problemMatcher": [
 				"$tsc"
 			]
+		},
+		{
+			"label": "Update Package",
+				"type": "process",
+			"command": "python",
+			"options": {
+				"cwd": "${workspaceFolder}/scripts"
+			},
+			"args": [
+				"${workspaceFolder}/scripts/update-package.py"
+			],
+			"problemMatcher": []
 		}
 	]
 }
