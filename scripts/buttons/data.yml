@@ -1,3 +1,4 @@
+# Original
 GitPull:
   title: Pull
   command: git.pull
@@ -146,5 +147,19 @@ GitShowOutput:
   title: Show Git Output
   command: git.showOutput
   icon: terminal
+  when: scmProvider == git
+  default: false
+
+# Custom
+GitStashStaged:
+  title: Stash Staged
+  command: git.stashStaged
+  icon: repo-push
+  when: scmProvider == git
+  default: false
+GitPushForce:
+  title: Push (Force)
+  command: git.pushForce
+  icon: arrow-up
   when: scmProvider == git
   default: false

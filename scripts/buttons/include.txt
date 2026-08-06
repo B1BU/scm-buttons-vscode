@@ -2,6 +2,7 @@ GitPull
 GitPullRebase
 GitPullFrom
 GitPush
+GitPushForce
 GitPushTo
 GitCheckout
 GitPublish
@@ -21,5 +22,6 @@ GitStashDrop
 GitStashPopLatest
 GitStashPop
 GitStash
+GitStashStaged
 GitStashIncludeUntracked
 GitShowOutput
