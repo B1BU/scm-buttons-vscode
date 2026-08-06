@@ -49,7 +49,7 @@
     "contributes": {
         "configuration": [
             {
-                "title": "Source Control Buttons",
+                "title": "Button Visibility",
                 "description": "Buttons to show in source control pane",
                 "properties": {
                     "scm-buttons.showGitCheckout": {
@@ -201,6 +201,16 @@
                         "type": "boolean",
                         "default": true,
                         "markdownDescription": "Show button for command `git.refresh`."
+                    }
+                }
+            },
+            {
+                "title": "Debug",
+                "properties": {
+                    "scm-buttons.showAll": {
+                        "type": "boolean",
+                        "default": false,
+                        "markdownDescription": "Show all buttons."
                     }
                 }
             }
@@ -390,152 +400,152 @@
         "menus": {
             "scm/title": [
                 {
-                    "when": "config.scm-buttons.showGitCheckout && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitCheckout && scmProvider == git",
                     "command": "scm-buttons.git.checkout",
                     "group": "navigation@1"
                 },
                 {
-                    "when": "config.scm-buttons.showGitSync && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitSync && scmProvider == git",
                     "command": "scm-buttons.git.sync",
                     "group": "navigation@2"
                 },
                 {
-                    "when": "config.scm-buttons.showGitSyncRebase && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitSyncRebase && scmProvider == git",
                     "command": "scm-buttons.git.syncRebase",
                     "group": "navigation@3"
                 },
                 {
-                    "when": "config.scm-buttons.showGitPull && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitPull && scmProvider == git",
                     "command": "scm-buttons.git.pull",
                     "group": "navigation@4"
                 },
                 {
-                    "when": "config.scm-buttons.showGitPush && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitPush && scmProvider == git",
                     "command": "scm-buttons.git.push",
                     "group": "navigation@5"
                 },
                 {
-                    "when": "config.scm-buttons.showGitPullRebase && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitPullRebase && scmProvider == git",
                     "command": "scm-buttons.git.pullRebase",
                     "group": "navigation@6"
                 },
                 {
-                    "when": "config.scm-buttons.showGitPushForce && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitPushForce && scmProvider == git",
                     "command": "scm-buttons.git.pushForce",
                     "group": "navigation@7"
                 },
                 {
-                    "when": "config.scm-buttons.showGitPullFrom && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitPullFrom && scmProvider == git",
                     "command": "scm-buttons.git.pullFrom",
                     "group": "navigation@8"
                 },
                 {
-                    "when": "config.scm-buttons.showGitPushTo && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitPushTo && scmProvider == git",
                     "command": "scm-buttons.git.pushTo",
                     "group": "navigation@9"
                 },
                 {
-                    "when": "config.scm-buttons.showGitCleanAll && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitCleanAll && scmProvider == git",
                     "command": "scm-buttons.git.cleanAll",
                     "group": "navigation@10"
                 },
                 {
-                    "when": "config.scm-buttons.showGitStageAll && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitStageAll && scmProvider == git",
                     "command": "scm-buttons.git.stageAll",
                     "group": "navigation@11"
                 },
                 {
-                    "when": "config.scm-buttons.showGitUnstageAll && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitUnstageAll && scmProvider == git",
                     "command": "scm-buttons.git.unstageAll",
                     "group": "navigation@12"
                 },
                 {
-                    "when": "config.scm-buttons.showGitCommitStaged && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitCommitStaged && scmProvider == git",
                     "command": "scm-buttons.git.commitStaged",
                     "group": "navigation@13"
                 },
                 {
-                    "when": "config.scm-buttons.showGitCommitStagedAmend && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitCommitStagedAmend && scmProvider == git",
                     "command": "scm-buttons.git.commitStagedAmend",
                     "group": "navigation@14"
                 },
                 {
-                    "when": "config.scm-buttons.showGitCommitAll && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitCommitAll && scmProvider == git",
                     "command": "scm-buttons.git.commitAll",
                     "group": "navigation@15"
                 },
                 {
-                    "when": "config.scm-buttons.showGitCommitAllAmend && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitCommitAllAmend && scmProvider == git",
                     "command": "scm-buttons.git.commitAllAmend",
                     "group": "navigation@16"
                 },
                 {
-                    "when": "config.scm-buttons.showGitCommitStagedSigned && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitCommitStagedSigned && scmProvider == git",
                     "command": "scm-buttons.git.commitStagedSigned",
                     "group": "navigation@17"
                 },
                 {
-                    "when": "config.scm-buttons.showGitCommitAllSigned && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitCommitAllSigned && scmProvider == git",
                     "command": "scm-buttons.git.commitAllSigned",
                     "group": "navigation@18"
                 },
                 {
-                    "when": "config.scm-buttons.showGitUndoCommit && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitUndoCommit && scmProvider == git",
                     "command": "scm-buttons.git.undoCommit",
                     "group": "navigation@19"
                 },
                 {
-                    "when": "config.scm-buttons.showGitStashApplyLatest && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitStashApplyLatest && scmProvider == git",
                     "command": "scm-buttons.git.stashApplyLatest",
                     "group": "navigation@20"
                 },
                 {
-                    "when": "config.scm-buttons.showGitStashApply && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitStashApply && scmProvider == git",
                     "command": "scm-buttons.git.stashApply",
                     "group": "navigation@21"
                 },
                 {
-                    "when": "config.scm-buttons.showGitStashPopLatest && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitStashPopLatest && scmProvider == git",
                     "command": "scm-buttons.git.stashPopLatest",
                     "group": "navigation@22"
                 },
                 {
-                    "when": "config.scm-buttons.showGitStashPop && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitStashPop && scmProvider == git",
                     "command": "scm-buttons.git.stashPop",
                     "group": "navigation@23"
                 },
                 {
-                    "when": "config.scm-buttons.showGitStash && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitStash && scmProvider == git",
                     "command": "scm-buttons.git.stash",
                     "group": "navigation@24"
                 },
                 {
-                    "when": "config.scm-buttons.showGitStashIncludeUntracked && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitStashIncludeUntracked && scmProvider == git",
                     "command": "scm-buttons.git.stashIncludeUntracked",
                     "group": "navigation@25"
                 },
                 {
-                    "when": "config.scm-buttons.showGitStashStaged && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitStashStaged && scmProvider == git",
                     "command": "scm-buttons.git.stashStaged",
                     "group": "navigation@26"
                 },
                 {
-                    "when": "config.scm-buttons.showGitStashDrop && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitStashDrop && scmProvider == git",
                     "command": "scm-buttons.git.stashDrop",
                     "group": "navigation@27"
                 },
                 {
-                    "when": "config.scm-buttons.showGitShowOutput && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitShowOutput && scmProvider == git",
                     "command": "scm-buttons.git.showOutput",
                     "group": "navigation@28"
                 },
                 {
-                    "when": "config.scm-buttons.showGitPublish && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitPublish && scmProvider == git",
                     "command": "scm-buttons.git.publish",
                     "group": "navigation@29"
                 },
                 {
-                    "when": "config.scm-buttons.showGitRefresh && scmProvider == git",
+                    "when": "config.scm-buttons.showAll && scmProvider == git || config.scm-buttons.showGitRefresh && scmProvider == git",
                     "command": "scm-buttons.git.refresh",
                     "group": "navigation@30"
                 }

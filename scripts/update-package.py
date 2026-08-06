@@ -62,7 +62,7 @@ def parse_buttons(buttons_data: dict, include: Iterable | None = None) -> Iterab
 			}
 
 			out_menus = {
-				'when': f'{config_condition} && {when}' if when else config_condition,
+				'when': f'config.scm-buttons.showAll && {when} || {config_condition} && {when}' if when else config_condition,
 				'command': ext_command,
 				'group': f'navigation@{i}',
 			}
