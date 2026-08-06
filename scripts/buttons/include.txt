@@ -1,10 +1,10 @@
+GitCheckout
 GitPull
 GitPullRebase
 GitPullFrom
 GitPush
 GitPushForce
 GitPushTo
-GitCheckout
 GitPublish
 GitCommitAll
 GitCommitAllAmend

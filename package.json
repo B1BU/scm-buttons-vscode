@@ -52,6 +52,11 @@
                 "title": "Source Control Buttons",
                 "description": "Buttons to show in source control pane",
                 "properties": {
+                    "scm-buttons.showGitCheckout": {
+                        "type": "boolean",
+                        "default": false,
+                        "markdownDescription": "Show button for command `git.checkout`"
+                    },
                     "scm-buttons.showGitPull": {
                         "type": "boolean",
                         "default": true,
@@ -81,11 +86,6 @@
                         "type": "boolean",
                         "default": false,
                         "markdownDescription": "Show button for command `git.pushTo`"
-                    },
-                    "scm-buttons.showGitCheckout": {
-                        "type": "boolean",
-                        "default": false,
-                        "markdownDescription": "Show button for command `git.checkout`"
                     },
                     "scm-buttons.showGitPublish": {
                         "type": "boolean",
@@ -193,6 +193,12 @@
         "commands": [
             {
                 "category": "Source Control Buttons",
+                "command": "scm-buttons.git.checkout",
+                "title": "Checkout to...",
+                "icon": "$(git-commit)"
+            },
+            {
+                "category": "Source Control Buttons",
                 "command": "scm-buttons.git.pull",
                 "title": "Pull",
                 "icon": "$(arrow-down)"
@@ -226,12 +232,6 @@
                 "command": "scm-buttons.git.pushTo",
                 "title": "Push to...",
                 "icon": "$(cloud-upload)"
-            },
-            {
-                "category": "Source Control Buttons",
-                "command": "scm-buttons.git.checkout",
-                "title": "Checkout to...",
-                "icon": "$(git-commit)"
             },
             {
                 "category": "Source Control Buttons",
@@ -357,38 +357,38 @@
         "menus": {
             "scm/title": [
                 {
+                    "when": "config.scm-buttons.showGitCheckout && scmProvider == git",
+                    "command": "scm-buttons.git.checkout",
+                    "group": "navigation@1"
+                },
+                {
                     "when": "config.scm-buttons.showGitPull && scmProvider == git",
                     "command": "scm-buttons.git.pull",
-                    "group": "navigation@1"
+                    "group": "navigation@2"
                 },
                 {
                     "when": "config.scm-buttons.showGitPullRebase && scmProvider == git",
                     "command": "scm-buttons.git.pullRebase",
-                    "group": "navigation@2"
+                    "group": "navigation@3"
                 },
                 {
                     "when": "config.scm-buttons.showGitPullFrom && scmProvider == git",
                     "command": "scm-buttons.git.pullFrom",
-                    "group": "navigation@3"
+                    "group": "navigation@4"
                 },
                 {
                     "when": "config.scm-buttons.showGitPush && scmProvider == git",
                     "command": "scm-buttons.git.push",
-                    "group": "navigation@4"
+                    "group": "navigation@5"
                 },
                 {
                     "when": "config.scm-buttons.showGitPushForce && scmProvider == git",
                     "command": "scm-buttons.git.pushForce",
-                    "group": "navigation@5"
+                    "group": "navigation@6"
                 },
                 {
                     "when": "config.scm-buttons.showGitPushTo && scmProvider == git",
                     "command": "scm-buttons.git.pushTo",
-                    "group": "navigation@6"
-                },
-                {
-                    "when": "config.scm-buttons.showGitCheckout && scmProvider == git",
-                    "command": "scm-buttons.git.checkout",
                     "group": "navigation@7"
                 },
                 {
