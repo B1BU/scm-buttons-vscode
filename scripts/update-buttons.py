@@ -15,9 +15,8 @@ DATA_DIR = Path('data')
 BUTTONS_FILE = DATA_DIR / 'buttons.yml'
 INCLUDE_FILE = DATA_DIR / 'include.txt'
 
-BUTTON_VISIBILITY_CONFIG_GROUP_TITLE = 'Button Visibility'
-
-PROJECT_ID = 'more-scm-buttons'
+CONFIG_GROUP_TITLE = 'Button Visibility'
+COMMAND_PREFIX = 'moreSourceControlButtons'
 
 
 def enable_ansi_support() -> None:
@@ -61,8 +60,8 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 			if not isinstance(default, bool):
 				raise TypeError('default must be a bool')
 
-			config_name = f'{PROJECT_ID}.show{id}'
-			ext_command = f'{PROJECT_ID}.{command}'
+			config_name = f'{COMMAND_PREFIX}.enable{id}'
+			ext_command = f'{COMMAND_PREFIX}.{command}'
 			config_condition = f'config.{config_name}'
 
 			config_data = {
@@ -81,7 +80,7 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 			}
 
 			out_when = ' && '.join([
-				f'(config.{PROJECT_ID}.showAll || {config_condition})',
+				f'(config.{COMMAND_PREFIX}.enableAll || {config_condition})',
 				*(when and [when])
 			])
 
@@ -120,7 +119,7 @@ def update_package() -> None:
 
 	config_group_index = next(
 		i for i, group in enumerate(package_data['contributes']['configuration'])
-		if group.get('title') == BUTTON_VISIBILITY_CONFIG_GROUP_TITLE
+		if group.get('title') == CONFIG_GROUP_TITLE
 	)
 
 	include = INCLUDE_FILE.read_text().splitlines()

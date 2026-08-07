@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 
 const extensionName = "b1bu.more-scm-buttons";
-const commandPrefix = "more-scm-buttons.";
+const commandPrefix = "moreSourceControlButtons.";
 
 interface CommandEntry {
     command: string;
