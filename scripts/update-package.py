@@ -75,8 +75,8 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 
 			out_commands_data = {
 				'category': 'Source Control Buttons',
-				'command': ext_command,
 				'title': title,
+				'command': ext_command,
 				'icon': f'$({icon})',
 			}
 
@@ -86,8 +86,8 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 			])
 
 			out_menus_data = {
-				'when': out_when,
 				'command': ext_command,
+				'when': out_when,
 				'group': f'navigation@{index}',
 			}
 
