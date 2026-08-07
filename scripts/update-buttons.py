@@ -17,6 +17,8 @@ INCLUDE_FILE = DATA_DIR / 'include.txt'
 
 BUTTON_VISIBILITY_CONFIG_GROUP_TITLE = 'Button Visibility'
 
+PROJECT_ID = 'more-scm-buttons'
+
 
 def enable_ansi_support() -> None:
 	'''Enable ANSI escape sequence support on Windows terminals.'''
@@ -59,8 +61,8 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 			if not isinstance(default, bool):
 				raise TypeError('default must be a bool')
 
-			config_name = f'scm-buttons.show{id}'
-			ext_command = f'scm-buttons.{command}'
+			config_name = f'{PROJECT_ID}.show{id}'
+			ext_command = f'{PROJECT_ID}.{command}'
 			config_condition = f'config.{config_name}'
 
 			config_data = {
@@ -79,7 +81,7 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 			}
 
 			out_when = ' && '.join([
-				f'(config.scm-buttons.showAll || {config_condition})',
+				f'(config.{PROJECT_ID}.showAll || {config_condition})',
 				*(when and [when])
 			])
 

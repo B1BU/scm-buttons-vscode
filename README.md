@@ -1,4 +1,4 @@
-# Source Control Buttons (B1BU)
+# More Source Control Buttons
 
 My personal fork of [Source Control Buttons](https://marketplace.visualstudio.com/items?itemName=tomblind.scm-buttons-vscode) by [Tom Blind](https://marketplace.visualstudio.com/publishers/tomblind).
 

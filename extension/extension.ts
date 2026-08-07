@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 
-const extensionName = "b1bu.scm-buttons-vscode-fork";
-const commandPrefix = "scm-buttons.";
+const extensionName = "b1bu.more-scm-buttons";
+const commandPrefix = "more-scm-buttons.";
 
 interface CommandEntry {
     command: string;
