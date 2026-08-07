@@ -3,7 +3,7 @@
     "publisher": "b1bu",
     "version": "1.0.0",
     "description": "Additional Source Control Buttons for Visual Studio Code",
-    "displayName": "Source Control Buttons (Fork)",
+    "displayName": "Source Control Buttons (B1BU)",
     "icon": "resources/icon.png",
     "main": "extension/extension.js",
     "repository": {
