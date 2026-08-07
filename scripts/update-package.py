@@ -15,8 +15,11 @@ DATA_DIR = Path('data')
 BUTTONS_FILE = DATA_DIR / 'buttons.yml'
 INCLUDE_FILE = DATA_DIR / 'include.txt'
 
+EXTENSION_TITLE = 'More Source Control Buttons'
+EXTENSION_ID = 'more-scm-buttons'
+
 CONFIG_GROUP_TITLE = 'Button Visibility'
-COMMAND_PREFIX = 'moreSourceControlButtons'
+CONFIG_PREFIX = 'moreSourceControlButtons'
 
 
 def enable_ansi_support() -> None:
@@ -44,6 +47,9 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 	n_errors = 0
 	for id in buttons if include == '*' else include:
 		try:
+			if not id:
+				continue
+
 			if id not in buttons:
 				print(f'-- \x1b[90m{id}\x1b[0m')
 				n_missing += 1
@@ -51,8 +57,9 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 
 			data = buttons[id]
 
-			title = '' if data['title'] is None else str(data['title'])
-			command = '' if data['command'] is None else str(data['command'])
+			more = '' if data['more'] is None else str(data['more'])
+			command_id = '' if data['command_id'] is None else str(data['command_id'])
+			command_name = '' if data['command_name'] is None else str(data['command_name'])
 			icon = '' if data['icon'] is None else str(data['icon'])
 			when = '' if data['when'] is None else str(data['when'])
 
@@ -60,12 +67,21 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 			if not isinstance(default, bool):
 				raise TypeError('default must be a bool')
 
-			config_name = f'{COMMAND_PREFIX}.enable{id}'
-			ext_command = f'{COMMAND_PREFIX}.{command}'
+			config_name = f'{CONFIG_PREFIX}.enable{id}'
 			config_condition = f'config.{config_name}'
+			full_command = f'{EXTENSION_ID}.{command_id}'
+
+			out_description = f'Show button for command `{command_name}`.'
+			if more:
+				out_description += f' *{more}*'
+
+			out_when = ' && '.join([
+				f'(config.{CONFIG_PREFIX}.enableAll || {config_condition})',
+				*(when and [when])
+			])
 
 			config_data = {
-				'markdownDescription': f'Show button for command `{command}`.',
+				'markdownDescription': out_description,
 				'type': 'boolean',
 				'default': default,
 				'order': index,
@@ -74,19 +90,14 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 			out_configuration_data = (config_name, config_data)
 
 			out_commands_data = {
-				'category': 'Source Control Buttons',
-				'title': title,
-				'command': ext_command,
+				'category': EXTENSION_TITLE,
+				'title': command_name,
+				'command': full_command,
 				'icon': f'$({icon})',
 			}
 
-			out_when = ' && '.join([
-				f'(config.{COMMAND_PREFIX}.enableAll || {config_condition})',
-				*(when and [when])
-			])
-
 			out_menus_data = {
-				'command': ext_command,
+				'command': full_command,
 				'when': out_when,
 				'group': f'navigation@{index}',
 			}
