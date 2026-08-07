@@ -33,26 +33,20 @@ def enable_ansi_support() -> None:
 	kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
 
 
-def print_traceback() -> None:
-	'''Print formatted traceback.'''
-
-	sys.excepthook(*sys.exc_info())
-
-
 def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'] = '*') -> Iterable[tuple[tuple[str, dict], dict, dict]]:
 	'''Returns: `((configuration_data_key, configuration_data_value), commands_data, menus_data)`'''
 
 	index = 1
-	n_missing = 0
-	n_errors = 0
+	missing = []
+	failed = []
 	for id in buttons if include == '*' else include:
 		try:
 			if not id:
 				continue
 
 			if id not in buttons:
+				missing.append(id)
 				print(f'-- \x1b[90m{id}\x1b[0m')
-				n_missing += 1
 				continue
 
 			data = buttons[id]
@@ -109,21 +103,22 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 			yield out_configuration_data, out_commands_data, out_menus_data
 
 		except Exception:
-			n_errors += 1
 			print(f'-- \x1b[91m{id}\x1b[0m')
-			print_traceback()
+			failed.append(id)
+			sys.excepthook(*sys.exc_info())
 
-	# Compile warnings
-	warnings = []
+	if missing or failed:
+		lines = []
 
-	if n_missing > 0:
-		warnings.append(f"\x1b[93m{n_missing} MISSING\x1b[0m")
+		if missing:
+			lines.extend([f'\x1b[93mMISSING {len(missing)}\x1b[0m', *(f'- \x1b[33m{id}\x1b[0m' for id in missing)])
 
-	if n_errors > 0:
-		warnings.append(f'\x1b[91m{n_errors} ERRORS\x1b[0m')
+		if failed:
+			lines.extend([f'\x1b[91mFAILED {len(failed)}\x1b[0m', *(f'- \x1b[31m{id}\x1b[0m' for id in failed)])
 
-	if warnings:
-		print(' | '.join(warnings))
+		text = '\n'.join(lines)
+
+		print(f'\n{text}\n')
 
 
 def update_package() -> None:
