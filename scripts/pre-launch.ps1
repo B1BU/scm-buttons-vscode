@@ -1,1 +1,1 @@
-python "$PSScriptRoot/update-buttons.py"
+python "$PSScriptRoot/update-package.py"
