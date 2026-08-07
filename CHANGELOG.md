@@ -9,4 +9,4 @@ Changes from the original version by Tom Blind
   - `Git: Sync (Rebase)`
   - `Git: Push (Force)`
   - `Git: Stash Staged`
-  - `Git: Refresh` (Right aligned)
+  - `Git: Refresh` (Aligned right)
