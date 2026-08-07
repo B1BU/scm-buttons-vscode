@@ -1,3 +1,6 @@
+## Version 0.1.5
+- Updated preview
+
 ## Version 0.1.4
 - Updated button icons
 - Updated button positions
