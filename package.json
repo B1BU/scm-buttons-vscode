@@ -53,154 +53,184 @@
                 "description": "Buttons to show in source control pane",
                 "properties": {
                     "moreSourceControlButtons.enableGitCheckout": {
+                        "markdownDescription": "Show button for command `git.checkout`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.checkout`."
+                        "order": 1
                     },
                     "moreSourceControlButtons.enableGitSync": {
+                        "markdownDescription": "Show button for command `git.sync`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.sync`."
+                        "order": 2
                     },
                     "moreSourceControlButtons.enableGitSyncRebase": {
+                        "markdownDescription": "Show button for command `git.syncRebase`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.syncRebase`."
+                        "order": 3
                     },
                     "moreSourceControlButtons.enableGitPull": {
+                        "markdownDescription": "Show button for command `git.pull`.",
                         "type": "boolean",
                         "default": true,
-                        "markdownDescription": "Show button for command `git.pull`."
+                        "order": 4
                     },
                     "moreSourceControlButtons.enableGitPush": {
+                        "markdownDescription": "Show button for command `git.push`.",
                         "type": "boolean",
                         "default": true,
-                        "markdownDescription": "Show button for command `git.push`."
+                        "order": 5
                     },
                     "moreSourceControlButtons.enableGitPullRebase": {
+                        "markdownDescription": "Show button for command `git.pullRebase`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.pullRebase`."
+                        "order": 6
                     },
                     "moreSourceControlButtons.enableGitPushForce": {
+                        "markdownDescription": "Show button for command `git.pushForce`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.pushForce`."
+                        "order": 7
                     },
                     "moreSourceControlButtons.enableGitPullFrom": {
+                        "markdownDescription": "Show button for command `git.pullFrom`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.pullFrom`."
+                        "order": 8
                     },
                     "moreSourceControlButtons.enableGitPushTo": {
+                        "markdownDescription": "Show button for command `git.pushTo`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.pushTo`."
+                        "order": 9
                     },
                     "moreSourceControlButtons.enableGitPublish": {
+                        "markdownDescription": "Show button for command `git.publish`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.publish`."
+                        "order": 10
                     },
                     "moreSourceControlButtons.enableGitCleanAll": {
+                        "markdownDescription": "Show button for command `git.cleanAll`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.cleanAll`."
+                        "order": 11
                     },
                     "moreSourceControlButtons.enableGitStageAll": {
+                        "markdownDescription": "Show button for command `git.stageAll`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.stageAll`."
+                        "order": 12
                     },
                     "moreSourceControlButtons.enableGitUnstageAll": {
+                        "markdownDescription": "Show button for command `git.unstageAll`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.unstageAll`."
+                        "order": 13
                     },
                     "moreSourceControlButtons.enableGitCommitStaged": {
+                        "markdownDescription": "Show button for command `git.commitStaged`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.commitStaged`."
+                        "order": 14
                     },
                     "moreSourceControlButtons.enableGitCommitAll": {
+                        "markdownDescription": "Show button for command `git.commitAll`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.commitAll`."
+                        "order": 15
                     },
                     "moreSourceControlButtons.enableGitCommitStagedAmend": {
+                        "markdownDescription": "Show button for command `git.commitStagedAmend`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.commitStagedAmend`."
+                        "order": 16
                     },
                     "moreSourceControlButtons.enableGitCommitAllAmend": {
+                        "markdownDescription": "Show button for command `git.commitAllAmend`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.commitAllAmend`."
+                        "order": 17
                     },
                     "moreSourceControlButtons.enableGitCommitStagedSigned": {
+                        "markdownDescription": "Show button for command `git.commitStagedSigned`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.commitStagedSigned`."
+                        "order": 18
                     },
                     "moreSourceControlButtons.enableGitCommitAllSigned": {
+                        "markdownDescription": "Show button for command `git.commitAllSigned`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.commitAllSigned`."
+                        "order": 19
                     },
                     "moreSourceControlButtons.enableGitUndoCommit": {
+                        "markdownDescription": "Show button for command `git.undoCommit`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.undoCommit`."
+                        "order": 20
                     },
                     "moreSourceControlButtons.enableGitStashApplyLatest": {
+                        "markdownDescription": "Show button for command `git.stashApplyLatest`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.stashApplyLatest`."
+                        "order": 21
                     },
                     "moreSourceControlButtons.enableGitStashApply": {
+                        "markdownDescription": "Show button for command `git.stashApply`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.stashApply`."
+                        "order": 22
                     },
                     "moreSourceControlButtons.enableGitStashPopLatest": {
+                        "markdownDescription": "Show button for command `git.stashPopLatest`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.stashPopLatest`."
+                        "order": 23
                     },
                     "moreSourceControlButtons.enableGitStashPop": {
+                        "markdownDescription": "Show button for command `git.stashPop`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.stashPop`."
+                        "order": 24
                     },
                     "moreSourceControlButtons.enableGitStash": {
+                        "markdownDescription": "Show button for command `git.stash`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.stash`."
+                        "order": 25
                     },
                     "moreSourceControlButtons.enableGitStashIncludeUntracked": {
+                        "markdownDescription": "Show button for command `git.stashIncludeUntracked`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.stashIncludeUntracked`."
+                        "order": 26
                     },
                     "moreSourceControlButtons.enableGitStashStaged": {
+                        "markdownDescription": "Show button for command `git.stashStaged`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.stashStaged`."
+                        "order": 27
                     },
                     "moreSourceControlButtons.enableGitStashDrop": {
+                        "markdownDescription": "Show button for command `git.stashDrop`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.stashDrop`."
+                        "order": 28
                     },
                     "moreSourceControlButtons.enableGitShowOutput": {
+                        "markdownDescription": "Show button for command `git.showOutput`.",
                         "type": "boolean",
                         "default": false,
-                        "markdownDescription": "Show button for command `git.showOutput`."
+                        "order": 29
                     },
                     "moreSourceControlButtons.enableGitRefresh": {
+                        "markdownDescription": "Show button for command `git.refresh`.",
                         "type": "boolean",
                         "default": true,
-                        "markdownDescription": "Show button for command `git.refresh`."
+                        "order": 30
                     }
                 }
             },

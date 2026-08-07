@@ -65,9 +65,10 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 			config_condition = f'config.{config_name}'
 
 			config_data = {
+				'markdownDescription': f'Show button for command `{command}`.',
 				'type': 'boolean',
 				'default': default,
-				'markdownDescription': f'Show button for command `{command}`.',
+				'order': index,
 			}
 
 			out_configuration_data = (config_name, config_data)
