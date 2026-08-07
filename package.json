@@ -1,7 +1,7 @@
 {
     "name": "scm-buttons-vscode-fork",
     "publisher": "b1bu",
-    "version": "0.1.5",
+    "version": "1.0.0",
     "description": "Additional Source Control Buttons for Visual Studio Code",
     "displayName": "Source Control Buttons (Fork)",
     "icon": "resources/icon.png",
