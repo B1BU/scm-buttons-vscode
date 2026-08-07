@@ -1,19 +1,17 @@
-# Source Control Buttons for Visual Studio Code (Fork)
+# Source Control Buttons (B1BU)
 
-> This is a fork of [Source Control Buttons](https://marketplace.visualstudio.com/items?itemName=tomblind.scm-buttons-vscode) by [Tom Blind](https://marketplace.visualstudio.com/publishers/tomblind).
+My personal fork of [Source Control Buttons](https://marketplace.visualstudio.com/items?itemName=tomblind.scm-buttons-vscode) by [Tom Blind](https://marketplace.visualstudio.com/publishers/tomblind).
 
 Add additional buttons to the source control panel. You can select which buttons you want enabled in the extension configurations.
 
-### Source Control Panel with all buttons enabled
+<img src="resources/preview.png">
 
-![](resources/preview.png)
+## What has been changed from the original version by Tom Blind
 
-## What has been changed from the original version
-
-- Fixed a typo in the button for `Git: Stash (Include Untracked)` that prevented it from working.
-- Changed icons to be more consistent with VSCode (and my personal preferences).
-- Reordered buttons in a way that makes more sense to me.
-- Added a `Show All` option for checking the icons.
+- Fixed a typo in the button for `Git: Stash (Include Untracked)` that prevented it from working
+- Changed button icons to match VSCode's existing buttons better
+- Reordered and grouped buttons
+- Added an option to enable all buttons (for checking icons)
 - Added buttons for:
   - `Git: Sync`
   - `Git: Sync (Rebase)`
@@ -23,4 +21,4 @@ Add additional buttons to the source control panel. You can select which buttons
 
 ## Please note
 
-I have no idea what I'm doing, so don't expect me to know how to fix bugs or add features.
+I have no idea what I'm doing. Do not expect me to know how to fix bugs or add features.
