@@ -18,8 +18,8 @@ INCLUDE_FILE = DATA_DIR / 'include.txt'
 EXTENSION_TITLE = 'More Source Control Buttons'
 EXTENSION_ID = 'more-scm-buttons'
 
-CONFIG_GROUP_TITLE = 'Button Visibility'
 CONFIG_PREFIX = 'moreSourceControlButtons'
+CONFIG_CATEGORY_PREFIX = 'buttonVisibility'
 
 
 def enable_ansi_support() -> None:
@@ -34,7 +34,7 @@ def enable_ansi_support() -> None:
 
 
 def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'] = '*') -> Iterable[tuple[tuple[str, dict], dict, dict]]:
-	'''Returns: `((configuration_data_key, configuration_data_value), commands_data, menus_data)`'''
+	'''Returns: `(configuration_category, (configuration_data_key, configuration_data_value), commands_data, menus_data)`'''
 
 	index = 1
 	missing = []
@@ -51,6 +51,7 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 
 			data = buttons[id]
 
+			category = '' if data['category'] is None else str(data['category'])
 			more = '' if data['more'] is None else str(data['more'])
 			command_id = '' if data['command_id'] is None else str(data['command_id'])
 			command_name = '' if data['command_name'] is None else str(data['command_name'])
@@ -64,6 +65,7 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 			config_name = f'{CONFIG_PREFIX}.enable{id}'
 			config_condition = f'config.{config_name}'
 			full_command = f'{EXTENSION_ID}.{command_id}'
+			out_category = f'{CONFIG_CATEGORY_PREFIX}{category}'
 
 			out_description = f'Show button for command `{command_name}`.'
 			if more:
@@ -88,19 +90,21 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 				'title': command_name,
 				'command': full_command,
 				'icon': f'$({icon})',
+				'generated': True,
 			}
 
 			out_menus_data = {
 				'command': full_command,
 				'when': out_when,
 				'group': f'navigation@{index}',
+				'generated': True,
 			}
 
 			print(f'{index:>2} \x1b[92m{id}\x1b[0m')
 
 			index += 1
 
-			yield out_configuration_data, out_commands_data, out_menus_data
+			yield out_category, out_configuration_data, out_commands_data, out_menus_data
 
 		except Exception:
 			print(f'-- \x1b[91m{id}\x1b[0m')
@@ -122,28 +126,29 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 
 
 def update_package() -> None:
-	package_data = json.load(PACKAGE_FILE.open())
-
-	config_group_index = next(
-		i for i, group in enumerate(package_data['contributes']['configuration'])
-		if group.get('title') == CONFIG_GROUP_TITLE
-	)
-
 	include = INCLUDE_FILE.read_text().splitlines()
-	buttons = yaml.safe_load(BUTTONS_FILE.open('r'))
+	buttons: dict = yaml.safe_load(BUTTONS_FILE.open('r'))
 
-	configuration_data = {}
-	commands_data = []
-	menus_data = []
+	package_data: dict = json.load(PACKAGE_FILE.open())
 
-	for this_configuration_data, this_commands_data, this_menus_data in parse_buttons(buttons, include):
-		configuration_data.update([this_configuration_data])
-		commands_data.append(this_commands_data)
-		menus_data.append(this_menus_data)
+	configuration_categories = [config.get('id') for config in package_data['contributes']['configuration']]
 
-	package_data['contributes']['configuration'][config_group_index]['properties'] = configuration_data
-	package_data['contributes']['commands'] = commands_data
-	package_data['contributes']['menus']['scm/title'] = menus_data
+	configuration = package_data['contributes']['configuration']
+	for index, category in enumerate(configuration_categories):
+		if category and category.startswith(CONFIG_CATEGORY_PREFIX):
+			configuration[index]['properties'] = {}
+
+	commands = package_data['contributes']['commands']
+	commands = [item for item in commands if not item.get('generated')]
+
+	menus = package_data['contributes']['menus']
+	menus['scm/title'] = [item for item in menus['scm/title'] if not item.get('generated')]
+
+	for configuration_category, configuration_data, commands_data, menus_data in parse_buttons(buttons, include):
+		configuration_category_index = configuration_categories.index(configuration_category)
+		configuration[configuration_category_index]['properties'].update([configuration_data])
+		commands.append(commands_data)
+		menus['scm/title'].append(menus_data)
 
 	json.dump(package_data, PACKAGE_FILE.open('w', encoding='utf-8'), indent=4)
 
