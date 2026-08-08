@@ -9,6 +9,8 @@ GitRefreshAlignedRight:
   command: git.refresh
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitShowOutput:
   category:
   name: Show Git Output
@@ -17,6 +19,8 @@ GitShowOutput:
   command: git.showOutput
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitCheckout:
   category:
   name: Checkout to...
@@ -25,6 +29,8 @@ GitCheckout:
   command: git.checkout
   when: scmProvider == git
   default: true
+  menus:
+  - scm/title
 
 # Changes
 GitStageAllChanges:
@@ -35,6 +41,8 @@ GitStageAllChanges:
   command: git.stageAll
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitUnstageAllChanges:
   category: Changes
   name: Unstage All Changes
@@ -43,6 +51,8 @@ GitUnstageAllChanges:
   command: git.unstageAll
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitDiscardAllChanges:
   category: Changes
   name: Discard All Changes
@@ -51,6 +61,8 @@ GitDiscardAllChanges:
   command: git.cleanAll
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 
 # Commits
 GitCommitStaged:
@@ -61,6 +73,8 @@ GitCommitStaged:
   command: git.commitStaged
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitCommitAll:
   category: Commits
   name: Commit All
@@ -69,6 +83,8 @@ GitCommitAll:
   command: git.commitAll
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitCommitAllAmend:
   category: Commits
   name: Commit All (Amend)
@@ -77,6 +93,8 @@ GitCommitAllAmend:
   command: git.commitAllAmend
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitCommitAllSignedOff:
   category: Commits
   name: Commit All (Signed Off)
@@ -85,6 +103,8 @@ GitCommitAllSignedOff:
   command: git.commitAllSigned
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitCommitStagedAmend:
   category: Commits
   name: Commit Staged (Amend)
@@ -93,6 +113,8 @@ GitCommitStagedAmend:
   command: git.commitStagedAmend
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitCommitStagedSignedOff:
   category: Commits
   name: Commit Staged (Signed Off)
@@ -101,6 +123,8 @@ GitCommitStagedSignedOff:
   command: git.commitStagedSigned
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitUndoCommit:
   category: Commits
   name: Undo Commit
@@ -109,6 +133,8 @@ GitUndoCommit:
   command: git.undoCommit
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 
 # Remotes
 GitPublishBranch:
@@ -119,6 +145,8 @@ GitPublishBranch:
   command: git.publish
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitSync:
   category: Remotes
   name: Sync
@@ -127,6 +155,8 @@ GitSync:
   command: git.sync
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitSyncRebase:
   category: Remotes
   name: Sync (Rebase)
@@ -135,6 +165,8 @@ GitSyncRebase:
   command: git.syncRebase
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitPull:
   category: Remotes
   name: Pull
@@ -143,6 +175,8 @@ GitPull:
   command: git.pull
   when: scmProvider == git
   default: true
+  menus:
+  - scm/title
 GitPullRebase:
   category: Remotes
   name: Pull (Rebase)
@@ -151,6 +185,8 @@ GitPullRebase:
   command: git.pullRebase
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitPullFrom:
   category: Remotes
   name: Pull from...
@@ -159,6 +195,8 @@ GitPullFrom:
   command: git.pullFrom
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitPush:
   category: Remotes
   name: Push
@@ -167,6 +205,8 @@ GitPush:
   command: git.push
   when: scmProvider == git
   default: true
+  menus:
+  - scm/title
 GitPushForce:
   category: Remotes
   name: Push (Force)
@@ -175,6 +215,8 @@ GitPushForce:
   command: git.pushForce
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitPushTo:
   category: Remotes
   name: Push to...
@@ -183,6 +225,8 @@ GitPushTo:
   command: git.pushTo
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 
 # Stashes
 GitStash:
@@ -193,6 +237,8 @@ GitStash:
   command: git.stash
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitStashIncludeUntracked:
   category: Stashes
   name: Stash (Include Untracked)
@@ -201,6 +247,8 @@ GitStashIncludeUntracked:
   command: git.stashIncludeUntracked
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitStashStaged:
   category: Stashes
   name: Stash Staged
@@ -209,6 +257,8 @@ GitStashStaged:
   command: git.stashStaged
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitApplyStash:
   category: Stashes
   name: Apply Stash...
@@ -217,6 +267,8 @@ GitApplyStash:
   command: git.stashApply
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitApplyLatestStash:
   category: Stashes
   name: Apply Latest Stash
@@ -225,6 +277,8 @@ GitApplyLatestStash:
   command: git.stashApplyLatest
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitDropStash:
   category: Stashes
   name: Drop Stash...
@@ -233,6 +287,8 @@ GitDropStash:
   command: git.stashDrop
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitPopStash:
   category: Stashes
   name: Pop Stash...
@@ -241,6 +297,8 @@ GitPopStash:
   command: git.stashPop
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title
 GitPopLatestStash:
   category: Stashes
   name: Pop Latest Stash
@@ -249,3 +307,5 @@ GitPopLatestStash:
   command: git.stashPopLatest
   when: scmProvider == git
   default: false
+  menus:
+  - scm/title

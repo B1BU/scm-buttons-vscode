@@ -33,8 +33,8 @@ def enable_ansi_support() -> None:
 	kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
 
 
-def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'] = '*') -> Iterable[tuple[str, tuple[str, dict], dict, dict]]:
-	'''Returns: `(configuration_category, (configuration_data_key, configuration_data_value), commands_data, menus_data)`'''
+def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'] = '*') -> Iterable[tuple[str, tuple[str, dict], dict, list[str], dict]]:
+	'''Returns: `(configuration_category, (configuration_data_key, configuration_data_value), commands_data, menus_list, menus_data)`'''
 
 	index = 1
 	missing = []
@@ -58,6 +58,7 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 			command = data['command']
 			when = '' if data['when'] is None else str(data['when'])
 			default = False if data['default'] is None else data['default']
+			menus = [] if data['menus'] is None else data['menus']
 
 			if not name:
 				raise ValueError('button name not defined')
@@ -70,6 +71,9 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 
 			if not isinstance(default, bool):
 				raise TypeError('default must be a bool')
+
+			if not menus:
+				raise ValueError('button menus not defined')
 
 			config_name = f'{CONFIG_PREFIX}.enable{id}'
 
@@ -113,7 +117,7 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 
 			index += 1
 
-			yield full_category, configuration_data, commands_data, menus_data
+			yield full_category, configuration_data, commands_data, menus, menus_data
 
 		except Exception:
 			print(f'-- \x1b[91m{id}\x1b[0m')
@@ -151,13 +155,23 @@ def update_package() -> None:
 	commands = [item for item in commands if not item.get('generated')]
 
 	menus = package_data['contributes']['menus']
-	menus['scm/title'] = [item for item in menus['scm/title'] if not item.get('generated')]
+	for menu in list(menus):
+		menus[menu] = [item for item in menus[menu] if not item.get('generated')]
 
-	for configuration_category, configuration_data, commands_data, menus_data in parse_buttons(buttons, include):
+		if not menus[menu]:
+			del menus[menu]
+
+	for configuration_category, configuration_data, commands_data, menus_list, menus_data in parse_buttons(buttons, include):
 		configuration_category_index = configuration_categories.index(configuration_category)
 		configuration[configuration_category_index]['properties'].update([configuration_data])
+
 		commands.append(commands_data)
-		menus['scm/title'].append(menus_data)
+
+		for menu in menus_list:
+			if menu not in menus:
+				menus[menu] = []
+
+			menus[menu].append(menus_data)
 
 	json.dump(package_data, PACKAGE_FILE.open('w', encoding='utf-8'), indent=4)
 
