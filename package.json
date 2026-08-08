@@ -55,7 +55,7 @@
                     "moreSourceControlButtons.enableGitCheckoutTo": {
                         "markdownDescription": "Show button for command `Checkout to...`.",
                         "type": "boolean",
-                        "default": false,
+                        "default": true,
                         "order": 1
                     },
                     "moreSourceControlButtons.enableGitSync": {

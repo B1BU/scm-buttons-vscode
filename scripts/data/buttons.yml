@@ -21,7 +21,7 @@ GitCheckoutTo:
   command_id: git.checkout
   icon: git-commit
   when: scmProvider == git
-  default: false
+  default: true
 
 # Changes
 GitStageAllChanges:
