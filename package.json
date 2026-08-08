@@ -50,7 +50,6 @@
         "configuration": [
             {
                 "title": "Button Visibility",
-                "description": "Buttons to show in source control pane",
                 "properties": {
                     "moreSourceControlButtons.enableGitCheckout": {
                         "markdownDescription": "Show button for command `Checkout to...`.",
