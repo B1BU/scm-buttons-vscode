@@ -273,210 +273,210 @@
             {
                 "category": "More Source Control Buttons",
                 "title": "Checkout to...",
-                "command": "more-scm-buttons.git.checkout",
+                "command": "moreSourceControlButtons.git.checkout",
                 "icon": "$(git-commit)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Sync",
-                "command": "more-scm-buttons.git.sync",
+                "command": "moreSourceControlButtons.git.sync",
                 "icon": "$(sync)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Sync (Rebase)",
-                "command": "more-scm-buttons.git.syncRebase",
+                "command": "moreSourceControlButtons.git.syncRebase",
                 "icon": "$(sync)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Pull",
-                "command": "more-scm-buttons.git.pull",
+                "command": "moreSourceControlButtons.git.pull",
                 "icon": "$(repo-pull)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Push",
-                "command": "more-scm-buttons.git.push",
+                "command": "moreSourceControlButtons.git.push",
                 "icon": "$(repo-push)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Pull (Rebase)",
-                "command": "more-scm-buttons.git.pullRebase",
+                "command": "moreSourceControlButtons.git.pullRebase",
                 "icon": "$(repo-fetch)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Push (Force)",
-                "command": "more-scm-buttons.git.pushForce",
+                "command": "moreSourceControlButtons.git.pushForce",
                 "icon": "$(repo-force-push)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Pull from...",
-                "command": "more-scm-buttons.git.pullFrom",
+                "command": "moreSourceControlButtons.git.pullFrom",
                 "icon": "$(cloud-download)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Push to...",
-                "command": "more-scm-buttons.git.pushTo",
+                "command": "moreSourceControlButtons.git.pushTo",
                 "icon": "$(cloud-upload)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Publish branch...",
-                "command": "more-scm-buttons.git.publish",
+                "command": "moreSourceControlButtons.git.publish",
                 "icon": "$(rocket)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Discard All Changes",
-                "command": "more-scm-buttons.git.cleanAll",
+                "command": "moreSourceControlButtons.git.cleanAll",
                 "icon": "$(discard)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Stage All Changes",
-                "command": "more-scm-buttons.git.stageAll",
+                "command": "moreSourceControlButtons.git.stageAll",
                 "icon": "$(add)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Unstage All Changes",
-                "command": "more-scm-buttons.git.unstageAll",
+                "command": "moreSourceControlButtons.git.unstageAll",
                 "icon": "$(remove)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Commit Staged",
-                "command": "more-scm-buttons.git.commitStaged",
+                "command": "moreSourceControlButtons.git.commitStaged",
                 "icon": "$(check)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Commit All",
-                "command": "more-scm-buttons.git.commitAll",
+                "command": "moreSourceControlButtons.git.commitAll",
                 "icon": "$(check-all)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Commit Staged (Amend)",
-                "command": "more-scm-buttons.git.commitStagedAmend",
+                "command": "moreSourceControlButtons.git.commitStagedAmend",
                 "icon": "$(check)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Commit All (Amend)",
-                "command": "more-scm-buttons.git.commitAllAmend",
+                "command": "moreSourceControlButtons.git.commitAllAmend",
                 "icon": "$(check-all)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Commit Staged (Signed Off)",
-                "command": "more-scm-buttons.git.commitStagedSigned",
+                "command": "moreSourceControlButtons.git.commitStagedSigned",
                 "icon": "$(check)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Commit All (Signed Off)",
-                "command": "more-scm-buttons.git.commitAllSigned",
+                "command": "moreSourceControlButtons.git.commitAllSigned",
                 "icon": "$(check-all)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Undo Commit",
-                "command": "more-scm-buttons.git.undoCommit",
+                "command": "moreSourceControlButtons.git.undoCommit",
                 "icon": "$(reply)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Apply Latest Stash",
-                "command": "more-scm-buttons.git.stashApplyLatest",
+                "command": "moreSourceControlButtons.git.stashApplyLatest",
                 "icon": "$(git-stash-apply)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Apply Stash...",
-                "command": "more-scm-buttons.git.stashApply",
+                "command": "moreSourceControlButtons.git.stashApply",
                 "icon": "$(git-stash-apply)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Pop Latest Stash",
-                "command": "more-scm-buttons.git.stashPopLatest",
+                "command": "moreSourceControlButtons.git.stashPopLatest",
                 "icon": "$(git-stash-pop)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Pop Stash...",
-                "command": "more-scm-buttons.git.stashPop",
+                "command": "moreSourceControlButtons.git.stashPop",
                 "icon": "$(git-stash-pop)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Stash",
-                "command": "more-scm-buttons.git.stash",
+                "command": "moreSourceControlButtons.git.stash",
                 "icon": "$(git-stash)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Stash (Include Untracked)",
-                "command": "more-scm-buttons.git.stashIncludeUntracked",
+                "command": "moreSourceControlButtons.git.stashIncludeUntracked",
                 "icon": "$(git-stash)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Stash Staged",
-                "command": "more-scm-buttons.git.stashStaged",
+                "command": "moreSourceControlButtons.git.stashStaged",
                 "icon": "$(git-stash)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Drop Stash...",
-                "command": "more-scm-buttons.git.stashDrop",
+                "command": "moreSourceControlButtons.git.stashDrop",
                 "icon": "$(trash)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Show Git Output",
-                "command": "more-scm-buttons.git.showOutput",
+                "command": "moreSourceControlButtons.git.showOutput",
                 "icon": "$(output)",
                 "generated": true
             },
             {
                 "category": "More Source Control Buttons",
                 "title": "Refresh",
-                "command": "more-scm-buttons.git.refresh",
+                "command": "moreSourceControlButtons.git.refresh",
                 "icon": "$(refresh)",
                 "generated": true
             }
@@ -484,181 +484,181 @@
         "menus": {
             "scm/title": [
                 {
-                    "command": "more-scm-buttons.git.checkout",
+                    "command": "moreSourceControlButtons.git.checkout",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitCheckout) && scmProvider == git",
                     "group": "navigation@1",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.sync",
+                    "command": "moreSourceControlButtons.git.sync",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitSync) && scmProvider == git",
                     "group": "navigation@2",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.syncRebase",
+                    "command": "moreSourceControlButtons.git.syncRebase",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitSyncRebase) && scmProvider == git",
                     "group": "navigation@3",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.pull",
+                    "command": "moreSourceControlButtons.git.pull",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitPull) && scmProvider == git",
                     "group": "navigation@4",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.push",
+                    "command": "moreSourceControlButtons.git.push",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitPush) && scmProvider == git",
                     "group": "navigation@5",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.pullRebase",
+                    "command": "moreSourceControlButtons.git.pullRebase",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitPullRebase) && scmProvider == git",
                     "group": "navigation@6",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.pushForce",
+                    "command": "moreSourceControlButtons.git.pushForce",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitPushForce) && scmProvider == git",
                     "group": "navigation@7",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.pullFrom",
+                    "command": "moreSourceControlButtons.git.pullFrom",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitPullFrom) && scmProvider == git",
                     "group": "navigation@8",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.pushTo",
+                    "command": "moreSourceControlButtons.git.pushTo",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitPushTo) && scmProvider == git",
                     "group": "navigation@9",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.publish",
+                    "command": "moreSourceControlButtons.git.publish",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitPublishBranch) && scmProvider == git",
                     "group": "navigation@10",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.cleanAll",
+                    "command": "moreSourceControlButtons.git.cleanAll",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitDiscardAllChanges) && scmProvider == git",
                     "group": "navigation@11",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.stageAll",
+                    "command": "moreSourceControlButtons.git.stageAll",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitStageAllChanges) && scmProvider == git",
                     "group": "navigation@12",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.unstageAll",
+                    "command": "moreSourceControlButtons.git.unstageAll",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitUnstageAllChanges) && scmProvider == git",
                     "group": "navigation@13",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.commitStaged",
+                    "command": "moreSourceControlButtons.git.commitStaged",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitCommitStaged) && scmProvider == git",
                     "group": "navigation@14",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.commitAll",
+                    "command": "moreSourceControlButtons.git.commitAll",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitCommitAll) && scmProvider == git",
                     "group": "navigation@15",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.commitStagedAmend",
+                    "command": "moreSourceControlButtons.git.commitStagedAmend",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitCommitStagedAmend) && scmProvider == git",
                     "group": "navigation@16",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.commitAllAmend",
+                    "command": "moreSourceControlButtons.git.commitAllAmend",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitCommitAllAmend) && scmProvider == git",
                     "group": "navigation@17",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.commitStagedSigned",
+                    "command": "moreSourceControlButtons.git.commitStagedSigned",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitCommitStagedSignedOff) && scmProvider == git",
                     "group": "navigation@18",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.commitAllSigned",
+                    "command": "moreSourceControlButtons.git.commitAllSigned",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitCommitAllSignedOff) && scmProvider == git",
                     "group": "navigation@19",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.undoCommit",
+                    "command": "moreSourceControlButtons.git.undoCommit",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitUndoCommit) && scmProvider == git",
                     "group": "navigation@20",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.stashApplyLatest",
+                    "command": "moreSourceControlButtons.git.stashApplyLatest",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitApplyLatestStash) && scmProvider == git",
                     "group": "navigation@21",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.stashApply",
+                    "command": "moreSourceControlButtons.git.stashApply",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitApplyStash) && scmProvider == git",
                     "group": "navigation@22",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.stashPopLatest",
+                    "command": "moreSourceControlButtons.git.stashPopLatest",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitPopLatestStash) && scmProvider == git",
                     "group": "navigation@23",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.stashPop",
+                    "command": "moreSourceControlButtons.git.stashPop",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitPopStash) && scmProvider == git",
                     "group": "navigation@24",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.stash",
+                    "command": "moreSourceControlButtons.git.stash",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitStash) && scmProvider == git",
                     "group": "navigation@25",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.stashIncludeUntracked",
+                    "command": "moreSourceControlButtons.git.stashIncludeUntracked",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitStashIncludeUntracked) && scmProvider == git",
                     "group": "navigation@26",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.stashStaged",
+                    "command": "moreSourceControlButtons.git.stashStaged",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitStashStaged) && scmProvider == git",
                     "group": "navigation@27",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.stashDrop",
+                    "command": "moreSourceControlButtons.git.stashDrop",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitDropStash) && scmProvider == git",
                     "group": "navigation@28",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.showOutput",
+                    "command": "moreSourceControlButtons.git.showOutput",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitShowOutput) && scmProvider == git",
                     "group": "navigation@29",
                     "generated": true
                 },
                 {
-                    "command": "more-scm-buttons.git.refresh",
+                    "command": "moreSourceControlButtons.git.refresh",
                     "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitRefreshAlignedRight) && scmProvider == git",
                     "group": "navigation@30",
                     "generated": true

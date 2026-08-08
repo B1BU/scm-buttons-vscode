@@ -16,9 +16,7 @@ BUTTONS_FILE = DATA_DIR / 'buttons.yml'
 INCLUDE_FILE = DATA_DIR / 'include.txt'
 
 EXTENSION_TITLE = 'More Source Control Buttons'
-EXTENSION_ID = 'more-scm-buttons'
-
-CONFIG_PREFIX = 'moreSourceControlButtons'
+NAMESPACE = 'moreSourceControlButtons'
 CONFIG_CATEGORY_PREFIX = 'buttonVisibility'
 
 
@@ -75,15 +73,15 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 			if not menus:
 				raise ValueError('button menus not defined')
 
-			config_name = f'{CONFIG_PREFIX}.enable{id}'
+			config_name = f'{NAMESPACE}.enable{id}'
 
-			full_command = f'{EXTENSION_ID}.{command}'
+			full_command = f'{NAMESPACE}.{command}'
 
 			description = f'Show button for command `{name}`.'
 			if info:
 				description += f' *{info}*'
 
-			full_when = f'(config.{CONFIG_PREFIX}.enableAll || config.{config_name})'
+			full_when = f'(config.{NAMESPACE}.enableAll || config.{config_name})'
 			if when:
 				full_when += f' && {when}'
 
@@ -140,40 +138,56 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 
 def update_package() -> None:
 	include = INCLUDE_FILE.read_text().splitlines()
-	buttons: dict = yaml.safe_load(BUTTONS_FILE.open('r'))
 
-	package_data: dict = json.load(PACKAGE_FILE.open())
+	with BUTTONS_FILE.open() as file:
+		buttons_data: dict = yaml.safe_load(file)
 
-	configuration_categories = [config.get('id') for config in package_data['contributes']['configuration']]
+	with PACKAGE_FILE.open() as file:
+		package_data: dict = yaml.safe_load(file)
 
-	configuration = package_data['contributes']['configuration']
-	for index, category in enumerate(configuration_categories):
-		if category and category.startswith(CONFIG_CATEGORY_PREFIX):
-			configuration[index]['properties'] = {}
+	contributes: dict = package_data['contributes']
 
-	commands = package_data['contributes']['commands']
-	commands = [item for item in commands if not item.get('generated')]
+	configuration: list = contributes['configuration']
 
-	menus = package_data['contributes']['menus']
-	for menu in list(menus):
-		menus[menu] = [item for item in menus[menu] if not item.get('generated')]
+	for category in configuration:
+		category_id = category.get('id')
+
+		if category_id and category_id.startswith(CONFIG_CATEGORY_PREFIX):
+			category['properties'] = {}
+
+	commands: list = contributes['commands']
+
+	commands[:] = [
+		command
+		for command in commands
+		if not command.get('generated')
+	]
+
+	menus = contributes['menus']
+
+	for menu, buttons in list(menus.items()):
+		menus[menu] = [
+			button
+			for button in buttons
+			if not button.get('generated')
+		]
 
 		if not menus[menu]:
 			del menus[menu]
 
-	for configuration_category, configuration_data, commands_data, menus_list, menus_data in parse_buttons(buttons, include):
-		configuration_category_index = configuration_categories.index(configuration_category)
-		configuration[configuration_category_index]['properties'].update([configuration_data])
+	categories = {
+		category.get('id'): category
+		for category in configuration
+	}
 
+	for configuration_category, configuration_data, commands_data, menus_list, menus_data in parse_buttons(buttons_data, include):
+		categories[configuration_category]['properties'].update([configuration_data])
 		commands.append(commands_data)
-
 		for menu in menus_list:
-			if menu not in menus:
-				menus[menu] = []
+			menus.setdefault(menu, []).append(menus_data)
 
-			menus[menu].append(menus_data)
-
-	json.dump(package_data, PACKAGE_FILE.open('w', encoding='utf-8'), indent=4)
+	with PACKAGE_FILE.open('w', encoding='utf-8') as file:
+		json.dump(package_data, file, indent=4)
 
 
 def main() -> None:
