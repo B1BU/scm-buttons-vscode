@@ -1,4 +1,4 @@
-GitCheckoutTo
+GitCheckout
 GitSync
 GitSyncRebase
 GitPull

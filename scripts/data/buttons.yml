@@ -15,7 +15,7 @@ GitShowOutput:
   icon: output
   when: scmProvider == git
   default: false
-GitCheckoutTo:
+GitCheckout:
   more:
   command_name: Checkout to...
   command_id: git.checkout

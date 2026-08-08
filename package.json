@@ -52,7 +52,7 @@
                 "title": "Button Visibility",
                 "description": "Buttons to show in source control pane",
                 "properties": {
-                    "moreSourceControlButtons.enableGitCheckoutTo": {
+                    "moreSourceControlButtons.enableGitCheckout": {
                         "markdownDescription": "Show button for command `Checkout to...`.",
                         "type": "boolean",
                         "default": true,
@@ -431,7 +431,7 @@
             "scm/title": [
                 {
                     "command": "more-scm-buttons.git.checkout",
-                    "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitCheckoutTo) && scmProvider == git",
+                    "when": "(config.moreSourceControlButtons.enableAll || config.moreSourceControlButtons.enableGitCheckout) && scmProvider == git",
                     "group": "navigation@1"
                 },
                 {
