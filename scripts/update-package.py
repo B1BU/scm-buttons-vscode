@@ -57,8 +57,17 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 			icon = '' if data['icon'] is None else str(data['icon'])
 			command = '' if data['command'] is None else str(data['command'])
 			when = '' if data['when'] is None else str(data['when'])
+			default = False if data['default'] is None else data['default']
 
-			default = data['default']
+			if not name:
+				raise ValueError('button name not defined')
+
+			if not icon:
+				raise ValueError('button icon not defined')
+
+			if not command:
+				raise ValueError('button cpmmand not defined')
+
 			if not isinstance(default, bool):
 				raise TypeError('default must be a bool')
 
