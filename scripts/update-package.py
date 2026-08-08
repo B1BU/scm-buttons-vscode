@@ -52,10 +52,10 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 			data = buttons[id]
 
 			category = '' if data['category'] is None else str(data['category'])
-			more = '' if data['more'] is None else str(data['more'])
-			command_id = '' if data['command_id'] is None else str(data['command_id'])
-			command_name = '' if data['command_name'] is None else str(data['command_name'])
+			name = '' if data['name'] is None else str(data['name'])
+			info = '' if data['info'] is None else str(data['info'])
 			icon = '' if data['icon'] is None else str(data['icon'])
+			command = '' if data['command'] is None else str(data['command'])
 			when = '' if data['when'] is None else str(data['when'])
 
 			default = data['default']
@@ -63,39 +63,39 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 				raise TypeError('default must be a bool')
 
 			config_name = f'{CONFIG_PREFIX}.enable{id}'
-			config_condition = f'config.{config_name}'
-			full_command = f'{EXTENSION_ID}.{command_id}'
-			out_category = f'{CONFIG_CATEGORY_PREFIX}{category}'
 
-			out_description = f'Show button for command `{command_name}`.'
-			if more:
-				out_description += f' *{more}*'
+			full_command = f'{EXTENSION_ID}.{command}'
 
-			out_when = ' && '.join([
-				f'(config.{CONFIG_PREFIX}.enableAll || {config_condition})',
-				*(when and [when])
-			])
+			description = f'Show button for command `{name}`.'
+			if info:
+				description += f' *{info}*'
+
+			full_when = f'(config.{CONFIG_PREFIX}.enableAll || config.{config_name})'
+			if when:
+				full_when += f' && {when}'
+
+			full_category = f'{CONFIG_CATEGORY_PREFIX}{category}'
 
 			config_data = {
-				'markdownDescription': out_description,
+				'markdownDescription': description,
 				'type': 'boolean',
 				'default': default,
 				'order': index,
 			}
 
-			out_configuration_data = (config_name, config_data)
+			configuration_data = (config_name, config_data)
 
-			out_commands_data = {
+			commands_data = {
 				'category': EXTENSION_TITLE,
-				'title': command_name,
+				'title': name,
 				'command': full_command,
 				'icon': f'$({icon})',
 				'generated': True,
 			}
 
-			out_menus_data = {
+			menus_data = {
 				'command': full_command,
-				'when': out_when,
+				'when': full_when,
 				'group': f'navigation@{index}',
 				'generated': True,
 			}
@@ -104,7 +104,7 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 
 			index += 1
 
-			yield out_category, out_configuration_data, out_commands_data, out_menus_data
+			yield full_category, configuration_data, commands_data, menus_data
 
 		except Exception:
 			print(f'-- \x1b[91m{id}\x1b[0m')

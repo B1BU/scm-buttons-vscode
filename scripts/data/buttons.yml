@@ -3,249 +3,249 @@
 # General
 GitRefreshAlignedRight:
   category:
-  more: (Aligned Right)
-  command_name: Refresh
-  command_id: git.refresh
+  name: Refresh
+  info: (Aligned Right)
   icon: refresh
+  command: git.refresh
   when: scmProvider == git
   default: false
 GitShowOutput:
   category:
-  more:
-  command_name: Show Git Output
-  command_id: git.showOutput
+  name: Show Git Output
+  info:
   icon: output
+  command: git.showOutput
   when: scmProvider == git
   default: false
 GitCheckout:
   category:
-  more:
-  command_name: Checkout to...
-  command_id: git.checkout
+  name: Checkout to...
+  info:
   icon: git-commit
+  command: git.checkout
   when: scmProvider == git
   default: true
 
 # Changes
 GitStageAllChanges:
   category: Changes
-  more:
-  command_name: Stage All Changes
-  command_id: git.stageAll
+  name: Stage All Changes
+  info:
   icon: add
+  command: git.stageAll
   when: scmProvider == git
   default: false
 GitUnstageAllChanges:
   category: Changes
-  more:
-  command_name: Unstage All Changes
-  command_id: git.unstageAll
+  name: Unstage All Changes
+  info:
   icon: remove
+  command: git.unstageAll
   when: scmProvider == git
   default: false
 GitDiscardAllChanges:
   category: Changes
-  more:
-  command_name: Discard All Changes
-  command_id: git.cleanAll
+  name: Discard All Changes
+  info:
   icon: discard
+  command: git.cleanAll
   when: scmProvider == git
   default: false
 
 # Commits
 GitCommitStaged:
   category: Commits
-  more:
-  command_name: Commit Staged
-  command_id: git.commitStaged
+  name: Commit Staged
+  info:
   icon: check
+  command: git.commitStaged
   when: scmProvider == git
   default: false
 GitCommitAll:
   category: Commits
-  more:
-  command_name: Commit All
-  command_id: git.commitAll
+  name: Commit All
+  info:
   icon: check-all
+  command: git.commitAll
   when: scmProvider == git
   default: false
 GitCommitAllAmend:
   category: Commits
-  more:
-  command_name: Commit All (Amend)
-  command_id: git.commitAllAmend
+  name: Commit All (Amend)
+  info:
   icon: check-all
+  command: git.commitAllAmend
   when: scmProvider == git
   default: false
 GitCommitAllSignedOff:
   category: Commits
-  more:
-  command_name: Commit All (Signed Off)
-  command_id: git.commitAllSigned
+  name: Commit All (Signed Off)
+  info:
   icon: check-all
+  command: git.commitAllSigned
   when: scmProvider == git
   default: false
 GitCommitStagedAmend:
   category: Commits
-  more:
-  command_name: Commit Staged (Amend)
-  command_id: git.commitStagedAmend
+  name: Commit Staged (Amend)
+  info:
   icon: check
+  command: git.commitStagedAmend
   when: scmProvider == git
   default: false
 GitCommitStagedSignedOff:
   category: Commits
-  more:
-  command_name: Commit Staged (Signed Off)
-  command_id: git.commitStagedSigned
+  name: Commit Staged (Signed Off)
+  info:
   icon: check
+  command: git.commitStagedSigned
   when: scmProvider == git
   default: false
 GitUndoCommit:
   category: Commits
-  more:
-  command_name: Undo Commit
-  command_id: git.undoCommit
+  name: Undo Commit
+  info:
   icon: reply
+  command: git.undoCommit
   when: scmProvider == git
   default: false
 
 # Remotes
 GitPublishBranch:
   category: Remotes
-  more:
-  command_name: Publish branch...
-  command_id: git.publish
+  name: Publish branch...
+  info:
   icon: rocket
+  command: git.publish
   when: scmProvider == git
   default: false
 GitSync:
   category: Remotes
-  more:
-  command_name: Sync
-  command_id: git.sync
+  name: Sync
+  info:
   icon: sync
+  command: git.sync
   when: scmProvider == git
   default: false
 GitSyncRebase:
   category: Remotes
-  more:
-  command_name: Sync (Rebase)
-  command_id: git.syncRebase
+  name: Sync (Rebase)
+  info:
   icon: sync
+  command: git.syncRebase
   when: scmProvider == git
   default: false
 GitPull:
   category: Remotes
-  more:
-  command_name: Pull
-  command_id: git.pull
+  name: Pull
+  info:
   icon: repo-pull
+  command: git.pull
   when: scmProvider == git
   default: true
 GitPullRebase:
   category: Remotes
-  more:
-  command_name: Pull (Rebase)
-  command_id: git.pullRebase
+  name: Pull (Rebase)
+  info:
   icon: repo-fetch
+  command: git.pullRebase
   when: scmProvider == git
   default: false
 GitPullFrom:
   category: Remotes
-  more:
-  command_name: Pull from...
-  command_id: git.pullFrom
+  name: Pull from...
+  info:
   icon: cloud-download
+  command: git.pullFrom
   when: scmProvider == git
   default: false
 GitPush:
   category: Remotes
-  more:
-  command_name: Push
-  command_id: git.push
+  name: Push
+  info:
   icon: repo-push
+  command: git.push
   when: scmProvider == git
   default: true
 GitPushForce:
   category: Remotes
-  more:
-  command_name: Push (Force)
-  command_id: git.pushForce
+  name: Push (Force)
+  info:
   icon: repo-force-push
+  command: git.pushForce
   when: scmProvider == git
   default: false
 GitPushTo:
   category: Remotes
-  more:
-  command_name: Push to...
-  command_id: git.pushTo
+  name: Push to...
+  info:
   icon: cloud-upload
+  command: git.pushTo
   when: scmProvider == git
   default: false
 
 # Stashes
 GitStash:
   category: Stashes
-  more:
-  command_name: Stash
-  command_id: git.stash
+  name: Stash
+  info:
   icon: git-stash
+  command: git.stash
   when: scmProvider == git
   default: false
 GitStashIncludeUntracked:
   category: Stashes
-  more:
-  command_name: Stash (Include Untracked)
-  command_id: git.stashIncludeUntracked
+  name: Stash (Include Untracked)
+  info:
   icon: git-stash
+  command: git.stashIncludeUntracked
   when: scmProvider == git
   default: false
 GitStashStaged:
   category: Stashes
-  more:
-  command_name: Stash Staged
-  command_id: git.stashStaged
+  name: Stash Staged
+  info:
   icon: git-stash
+  command: git.stashStaged
   when: scmProvider == git
   default: false
 GitApplyStash:
   category: Stashes
-  more:
-  command_name: Apply Stash...
-  command_id: git.stashApply
+  name: Apply Stash...
+  info:
   icon: git-stash-apply
+  command: git.stashApply
   when: scmProvider == git
   default: false
 GitApplyLatestStash:
   category: Stashes
-  more:
-  command_name: Apply Latest Stash
-  command_id: git.stashApplyLatest
+  name: Apply Latest Stash
+  info:
   icon: git-stash-apply
+  command: git.stashApplyLatest
   when: scmProvider == git
   default: false
 GitDropStash:
   category: Stashes
-  more:
-  command_name: Drop Stash...
-  command_id: git.stashDrop
+  name: Drop Stash...
+  info:
   icon: trash
+  command: git.stashDrop
   when: scmProvider == git
   default: false
 GitPopStash:
   category: Stashes
-  more:
-  command_name: Pop Stash...
-  command_id: git.stashPop
+  name: Pop Stash...
+  info:
   icon: git-stash-pop
+  command: git.stashPop
   when: scmProvider == git
   default: false
 GitPopLatestStash:
   category: Stashes
-  more:
-  command_name: Pop Latest Stash
-  command_id: git.stashPopLatest
+  name: Pop Latest Stash
+  info:
   icon: git-stash-pop
+  command: git.stashPopLatest
   when: scmProvider == git
   default: false
