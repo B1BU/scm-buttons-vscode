@@ -33,7 +33,7 @@ def enable_ansi_support() -> None:
 	kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
 
 
-def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'] = '*') -> Iterable[tuple[tuple[str, dict], dict, dict]]:
+def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'] = '*') -> Iterable[tuple[str, tuple[str, dict], dict, dict]]:
 	'''Returns: `(configuration_category, (configuration_data_key, configuration_data_value), commands_data, menus_data)`'''
 
 	index = 1
