@@ -52,10 +52,10 @@ def parse_buttons(buttons: dict[str, dict], include: Iterable[str] | Literal['*'
 			data = buttons[id]
 
 			category = '' if data['category'] is None else str(data['category'])
-			name = '' if data['name'] is None else str(data['name'])
+			name = data['name']
 			info = '' if data['info'] is None else str(data['info'])
-			icon = '' if data['icon'] is None else str(data['icon'])
-			command = '' if data['command'] is None else str(data['command'])
+			icon = data['icon']
+			command = data['command']
 			when = '' if data['when'] is None else str(data['when'])
 			default = False if data['default'] is None else data['default']
 
