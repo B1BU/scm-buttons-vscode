@@ -43,9 +43,7 @@
     "extensionKind": [
         "workspace"
     ],
-    "activationEvents": [
-        "*"
-    ],
+    "activationEvents": [],
     "contributes": {
         "configuration": [
             {
